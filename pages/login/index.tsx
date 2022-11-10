@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import {
   Layout,
   HeaderText,
@@ -8,6 +9,7 @@ import {
 } from "project-isaac-components";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Layout>
       <div>
@@ -17,7 +19,12 @@ export default function Home() {
           <InputField placeholder="Password" className="my-6" type="password" />
           <div className="flex justify-between">
             <Checkbox label="Remember me?" />
-            <a className="flex text-blue-700">forgot password?</a>
+            <a
+              className="flex text-blue-700 cursor-pointer"
+              onClick={() => router.push("forgot-password")}
+            >
+              forgot password?
+            </a>
           </div>
           <div className="flex justify-between">
             <Button
@@ -27,7 +34,13 @@ export default function Home() {
               onClick={() => {}}
             />
             <div className="flex mt-8">
-              Not a member yet ? <a className="text-blue-700 ml-2"> Sign Up</a>
+              Not a member yet ?{" "}
+              <a
+                className="text-blue-700 ml-2 cursor-pointer"
+                onClick={() => router.push("/sign-up")}
+              >
+                Sign Up
+              </a>
             </div>
           </div>
         </Form>
