@@ -27,12 +27,14 @@ export default function Home() {
             </a>
           </div>
           <div className="flex justify-between">
-            <Button
-              type="primary"
-              text="Sign In"
-              className="mt-8"
-              onClick={() => {}}
-            />
+            <div className="w-48">
+              <Button
+                type="primary"
+                text="Sign In"
+                className="mt-8"
+                onClick={() => {}}
+              />
+            </div>
             <div className="flex mt-8">
               Not a member yet ?{" "}
               <a

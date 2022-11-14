@@ -5,6 +5,7 @@ import {
   Text,
   InputField,
   BlueIsaacLogo,
+  FullButton,
   OutlinedForm,
   Button,
 } from "project-isaac-components";
@@ -43,13 +44,16 @@ export default function ForgotPassword() {
               className="relative"
               style={{ width: "400px", height: "40px" }}
             >
-              <Button
-                text="Submit"
-                type="primary"
-                size="xl"
-                onClick={() => {}}
-                class="w-full text-sm"
-              />
+              <div className="relative" style={{ width: 400, height: 40 }}>
+                <div
+                  className="inline-flex items-center justify-center px-5 py-2 bg-blue-700 rounded-lg"
+                  style={{ width: 400, height: 40 }}
+                >
+                  <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+                    Reset password
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div

@@ -14,35 +14,35 @@ export default function Home() {
       <div>
         <HeaderText text="Sign Up" color="black" className="mt-10" size="lg" />
         <Form>
-          <InputField placeholder="Name" className="my-10" />
+          <InputField placeholder="Name" className="my-14" />
           <InputField
             placeholder="Email address"
-            className="my-8"
+            className="my-14"
             type="email"
           />
           <InputField
             placeholder="Password"
-            className="my-10"
+            className="my-14"
             type="password"
           />
           <InputField
             placeholder="Confirm password"
-            className="my-10"
+            className="my-14"
             type="Confirm password"
           />
 
-          <div className="flex justify-between mt-24">
+          <div className="flex justify-between mt-16">
             <Button
               type="primary"
               text="NEXT"
-              className="mt-10"
+              className="mt-8"
               onClick={() => {}}
             />
             <div className="flex mt-8">
               Already a member ?{" "}
               <a
                 className="text-blue-700 ml-2 cursor-pointer"
-                onClick={() => router.push("/login")}
+                onClick={() => router.push("login")}
               >
                 {" "}
                 Sign In
