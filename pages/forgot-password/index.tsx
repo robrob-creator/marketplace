@@ -5,7 +5,6 @@ import {
   Text,
   InputField,
   BlueIsaacLogo,
-  FullButton,
   OutlinedForm,
   Button,
 } from "project-isaac-components";
