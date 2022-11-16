@@ -36,7 +36,8 @@ export default function ForgotPassword() {
               <InputField
                 className=""
                 placeholder="Email"
-                style={{ width: "400px", height: "56px" }}
+                size="lg"
+                style={{ width: "400px" }}
               />
             </div>
             <div
@@ -47,6 +48,7 @@ export default function ForgotPassword() {
                 <div
                   className="inline-flex items-center justify-center px-5 py-2 bg-blue-700 rounded-lg"
                   style={{ width: 400, height: 40 }}
+                  onClick={() => router.push("/forgot-password/check-email")}
                 >
                   <p className="text-xs font-semibold leading-snug text-center text-gray-50">
                     Reset password

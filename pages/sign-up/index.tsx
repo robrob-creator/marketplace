@@ -11,27 +11,23 @@ export default function Home() {
   const router = useRouter();
   return (
     <Layout>
-      <div>
+      <div className="pb-36">
         <HeaderText text="Sign Up" color="black" className="mt-10" size="lg" />
         <Form>
-          <InputField placeholder="Name" className="my-14" />
+          <InputField placeholder="Name" className="my-4" />
           <InputField
             placeholder="Email address"
-            className="my-14"
+            className="my-4"
             type="email"
           />
-          <InputField
-            placeholder="Password"
-            className="my-14"
-            type="password"
-          />
+          <InputField placeholder="Password" className="my-4" type="password" />
           <InputField
             placeholder="Confirm password"
-            className="my-14"
+            className="my-4"
             type="Confirm password"
           />
 
-          <div className="flex justify-between align mt-16 items-center">
+          <div className="flex justify-between align mt-32 items-center">
             <div className="w-48">
               <Button
                 type="primary"

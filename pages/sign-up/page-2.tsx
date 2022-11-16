@@ -4,6 +4,8 @@ import {
   HeaderText,
   Form,
   InputField,
+  Text,
+  Checkbox,
   Button,
 } from "project-isaac-components";
 
@@ -30,6 +32,20 @@ export default function Home() {
               <InputField placeholder="Company Name" className="my-14" />
               <InputField placeholder="Province/State" className="my-10" />
             </div>
+          </div>
+          <div
+            className="inline-flex space-x-4 items-center justify-end"
+            style={{ width: 568, height: 38 }}
+          >
+            <div className="flex-1 h-full rounded">
+              <Checkbox />
+            </div>
+            <Text color="black" size="sm">
+              Creating an account means you’re okay with our{" "}
+              <span className="text-blue-600">Terms of Service</span>, Privacy
+              Policy, and our default{" "}
+              <span className="text-blue-600">Notification Settings</span>.
+            </Text>
           </div>
           <div className="flex justify-between mt-16">
             <div className="w-48">
