@@ -3,10 +3,12 @@ import NavigationPanel from "../components/navigation";
 import { Banner, Tabs, Footer, Card } from "project-isaac-components";
 
 import { useRouter } from "next/router";
+import Head from "next/head";
 export default function Homes() {
   const router = useRouter();
   return (
     <div>
+      <Head>Marketplace</Head>
       <NavigationPanel />
       <Banner />
       <Tabs />

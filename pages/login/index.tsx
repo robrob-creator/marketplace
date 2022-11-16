@@ -4,10 +4,11 @@ import {
   HeaderText,
   Form,
   InputField,
+  BlueIsaacLogo,
   Checkbox,
   Button,
 } from "project-isaac-components";
-import { ErrorProps } from "../types";
+import { ErrorProps } from "../../types";
 import { useState } from "react";
 import { isValidEmail } from "../api/common";
 interface SignProps {
@@ -38,7 +39,7 @@ export default function Home({ email, password, error }: SignProps) {
         email: { errorMessage: "Email required !", name: "email" },
       });
 
-    router.push("/");
+    router.push("/user-account-setting");
   };
 
   const clearError = (name: string) => {
@@ -57,12 +58,22 @@ export default function Home({ email, password, error }: SignProps) {
   return (
     <Layout>
       <div>
-        <HeaderText text="Sign In" color="black" className="mt-10" />
-        <Form>
+        <div className="sm:invisible flex flex-col justify-center items-center">
+          <BlueIsaacLogo className="sm:h-0" />
+        </div>
+        <HeaderText
+          text="Sign In"
+          fontStyle="font-medium"
+          color="black"
+          size="md"
+          className="mt-10 "
+        />
+        <Form bordered={false}>
           <InputField
             name="email"
             placeholder="Email"
-            className="my-12"
+            type="text"
+            className="my-4"
             errorMessage={errors.email?.errorMessage}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               if (!isValidEmail(e.currentTarget.value))
