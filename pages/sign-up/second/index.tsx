@@ -65,19 +65,21 @@ export default function RegisterTwo() {
               </div>
             </div>
           </Form>
-          <div
-            className="inline-flex space-x-4 sm:w-128 w-96 items-center justify-end"
-            style={{ height: 38 }}
-          >
-            <div className="flex-1 h-full rounded">
-              <Checkbox />
+          <div className="sm:w-128">
+            <div
+              className="inline-flex space-x-4 sm:w-full w-96 mt-12 items-center justify-end"
+              style={{ height: 38 }}
+            >
+              <div className="flex-1 h-full rounded">
+                <Checkbox />
+              </div>
+              <Text color="black" size="sm">
+                Creating an account means you’re okay with our{" "}
+                <span className="text-blue-600">Terms of Service</span>, Privacy
+                Policy, and our default{" "}
+                <span className="text-blue-600">Notification Settings</span>.
+              </Text>
             </div>
-            <Text color="black" size="sm">
-              Creating an account means you’re okay with our{" "}
-              <span className="text-blue-600">Terms of Service</span>, Privacy
-              Policy, and our default{" "}
-              <span className="text-blue-600">Notification Settings</span>.
-            </Text>
           </div>
           <div className="flex sm:flex-none flex-wrap align justify-between mt-16">
             <div className="w-48 ">

@@ -69,42 +69,44 @@ export default function Home({ email, password, error }: SignProps) {
           className="mt-10 "
         />
         <Form bordered={false}>
-          <InputField
-            name="email"
-            placeholder="Email"
-            type="text"
-            className="my-4"
-            errorMessage={errors.email?.errorMessage}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              if (!isValidEmail(e.currentTarget.value))
-                return setErrors({
-                  ...errors,
-                  email: { errorMessage: "Email invalid !", name: "email" },
-                });
-              clearError("email");
-              setFormData({ ...formData, email: e.currentTarget.value });
-            }}
-          />
-          <InputField
-            placeholder="Password"
-            className="my-6"
-            type="password"
-            name="password"
-            errorMessage={errors.password?.errorMessage}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              if (!e.currentTarget.value) {
-                return setErrors({
-                  ...errors,
-                  password: {
-                    errorMessage: "Password required!",
-                    name: "password",
-                  },
-                });
-              }
-              clearError("password");
-              setFormData({ ...formData, password: e.currentTarget.value });
-            }}
-          />
+          <div className="sm:w-full w-96  gap-2">
+            <InputField
+              name="email"
+              placeholder="Email"
+              type="text"
+              className="my-4"
+              errorMessage={errors.email?.errorMessage}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                if (!isValidEmail(e.currentTarget.value))
+                  return setErrors({
+                    ...errors,
+                    email: { errorMessage: "Email invalid !", name: "email" },
+                  });
+                clearError("email");
+                setFormData({ ...formData, email: e.currentTarget.value });
+              }}
+            />
+            <InputField
+              placeholder="Password"
+              className="my-6"
+              type="password"
+              name="password"
+              errorMessage={errors.password?.errorMessage}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                if (!e.currentTarget.value) {
+                  return setErrors({
+                    ...errors,
+                    password: {
+                      errorMessage: "Password required!",
+                      name: "password",
+                    },
+                  });
+                }
+                clearError("password");
+                setFormData({ ...formData, password: e.currentTarget.value });
+              }}
+            />
+          </div>
         </Form>
         <div className="flex mt-10 justify-between">
           <Checkbox label="Remember me?" />

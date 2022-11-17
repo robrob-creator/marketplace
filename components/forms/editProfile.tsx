@@ -13,35 +13,35 @@ export function EmailForm() {
 }
 export function PasswordForm() {
   return (
-    <div className="flex lg:w-4/6">
-      <Form className="lg:mx-8 h-96">
-        <div className="sm:w-129 w-96 ">
+    <div className="flex md:w-4/6 lg:w-4/6">
+      <div className="lg:mx-8 sm:w-full h-96">
+        <div className="sm:w-full  w-96 ">
           <InputField placeholder="Old password" className="mb-8" size="lg" />
           <InputField placeholder="New password" className="mb-8" size="lg" />
           <InputField placeholder="Confirm password" size="lg" />
         </div>
-      </Form>
+      </div>
     </div>
   );
 }
 export function ProfileForm() {
   return (
-    <div className="flex flex-wrap lg:w-4/6">
-      <Form className="lg:mx-8 lg:w-full h-96">
+    <div className="flex flex-wrap lg:w-4/6 ">
+      <div className="lg:mx-8 sm:w-full h-96 ">
         <ProfileImageUp />
-        <div className="sm:w-129 w-96 grid sm:grid-cols-2 gap-2">
+        <div className="sm:w-full w-96 grid sm:grid-cols-2 gap-2 ">
           <div>
-            <InputField placeholder="Old password" className="mb-8" size="lg" />
-            <InputField placeholder="New password" className="mb-8" size="lg" />
+            <InputField placeholder="Old password" className="mb-6" size="lg" />
+            <InputField placeholder="New password" className="mb-6" size="lg" />
             <InputField placeholder="Confirm password" size="lg" />
           </div>
           <div>
-            <InputField placeholder="Old password" className="mb-8" size="lg" />
-            <InputField placeholder="New password" className="mb-8" size="lg" />
+            <InputField placeholder="Old password" className="mb-6" size="lg" />
+            <InputField placeholder="New password" className="mb-6" size="lg" />
             <InputField placeholder="Confirm password" size="lg" />
           </div>
         </div>
-      </Form>
+      </div>
     </div>
   );
 }
