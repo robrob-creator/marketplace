@@ -31,14 +31,24 @@ export function ProfileForm() {
         <ProfileImageUp />
         <div className="sm:w-full w-96 grid sm:grid-cols-2 gap-2 ">
           <div>
-            <InputField placeholder="Old password" className="mb-6" size="lg" />
-            <InputField placeholder="New password" className="mb-6" size="lg" />
-            <InputField placeholder="Confirm password" size="lg" />
+            <InputField placeholder="First Name" className="mb-6" size="lg" />
+            <InputField
+              placeholder="Mobile Phone Number"
+              className="mb-6"
+              size="lg"
+            />
+            <InputField placeholder="Country" size="lg" className="mb-6" />
+            <InputField placeholder="City/Town" size="lg" className="mb-6" />
           </div>
           <div>
-            <InputField placeholder="Old password" className="mb-6" size="lg" />
-            <InputField placeholder="New password" className="mb-6" size="lg" />
-            <InputField placeholder="Confirm password" size="lg" />
+            <InputField placeholder="Last Name" className="mb-6" size="lg" />
+            <InputField placeholder="Company Name" className="mb-6" size="lg" />
+            <InputField
+              placeholder="Province/State"
+              size="lg"
+              className="mb-6"
+            />
+            <InputField placeholder="Language" size="lg" className="mb-6" />
           </div>
         </div>
       </div>
@@ -48,7 +58,7 @@ export function ProfileForm() {
 function ProfileImageUp() {
   return (
     <div className="inline-flex w-full space-x-8 mb-8 items-center justify-start">
-      <UserAvatar className="w-1/5 h-full rounded-full" />
+      <UserAvatar className="w-24 h-full rounded-full" />
       <div className="flex space-x-8 items-center justify-start">
         <div className="flex items-center justify-center w-48 px-5 py-2 bg-blue-700 rounded-lg">
           <p className="text-xs font-semibold leading-snug text-center text-gray-50">

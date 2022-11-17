@@ -9,6 +9,8 @@ import {
   BlueIsaacLogo,
   Button,
 } from "project-isaac-components";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function RegisterTwo() {
   const router = useRouter();
@@ -34,11 +36,42 @@ export default function RegisterTwo() {
                   type="text"
                   className="my-4"
                 />
-                <InputField
-                  placeholder="Mobile Phone Number"
-                  className="my-4"
-                  type="tel"
-                />
+                <div className="w-36">
+                  <PhoneInput
+                    placeholder="Mobile Phone Number"
+                    value="63"
+                    buttonStyle={{
+                      width: 80,
+                      height: 56,
+                      marginLeft: 12,
+                      paddingLeft: 20,
+                      paddingRight: 20,
+                      paddingTop: 5,
+                      paddingBottom: 5,
+                      backgroundColor: "rgba(239.31, 240.16, 246.50, 1)",
+                      borderRadius: 12,
+                      display: "inline-flex",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      position: "absolute",
+                    }}
+                    inputStyle={{
+                      width: 188,
+                      height: 56,
+                      paddingLeft: 20,
+                      paddingRight: 20,
+                      paddingTop: 5,
+                      paddingBottom: 5,
+                      backgroundColor: "rgba(239.31, 240.16, 246.50, 1)",
+                      borderRadius: 12,
+                      display: "inline-flex",
+                      flexDirection: "column",
+                      alignItems: "flex-end",
+                      justifyContent: "center",
+                    }}
+                  />
+                </div>
+
                 <InputField
                   placeholder="Country"
                   type="text"
