@@ -24,7 +24,7 @@ export default function SignUp() {
           size="lg"
         />
         <Form bordered={false}>
-          <div className="sm:w-full w-96">
+          <div className="sm:w-full w-80">
             <InputField placeholder="Name" className="my-4" />
             <InputField
               placeholder="Email address"

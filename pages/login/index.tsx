@@ -66,74 +66,74 @@ export default function Home({ email, password, error }: SignProps) {
           fontStyle="font-medium"
           color="black"
           size="md"
-          className="mt-10 "
+          className="mt-10 sm:ml-0 ml-4 "
         />
-        <Form bordered={false}>
-          <div className="sm:w-full w-96  gap-2">
-            <InputField
-              name="email"
-              placeholder="Email"
-              type="text"
-              className="my-4"
-              errorMessage={errors.email?.errorMessage}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                if (!isValidEmail(e.currentTarget.value))
-                  return setErrors({
-                    ...errors,
-                    email: { errorMessage: "Email invalid !", name: "email" },
-                  });
-                clearError("email");
-                setFormData({ ...formData, email: e.currentTarget.value });
-              }}
-            />
-            <InputField
-              placeholder="Password"
-              className="my-6"
-              type="password"
-              name="password"
-              errorMessage={errors.password?.errorMessage}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                if (!e.currentTarget.value) {
-                  return setErrors({
-                    ...errors,
-                    password: {
-                      errorMessage: "Password required!",
-                      name: "password",
-                    },
-                  });
-                }
-                clearError("password");
-                setFormData({ ...formData, password: e.currentTarget.value });
-              }}
-            />
+        <div className="sm:block grid place-items-center">
+          <Form bordered={false}>
+            <div className="sm:w-full w-80  gap-2">
+              <InputField
+                name="email"
+                placeholder="Email"
+                type="text"
+                className="my-4"
+                errorMessage={errors.email?.errorMessage}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  if (!isValidEmail(e.currentTarget.value))
+                    return setErrors({
+                      ...errors,
+                      email: { errorMessage: "Email invalid !", name: "email" },
+                    });
+                  clearError("email");
+                  setFormData({ ...formData, email: e.currentTarget.value });
+                }}
+              />
+              <InputField
+                placeholder="Password"
+                className="my-6"
+                type="password"
+                name="password"
+                errorMessage={errors.password?.errorMessage}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  if (!e.currentTarget.value) {
+                    return setErrors({
+                      ...errors,
+                      password: {
+                        errorMessage: "Password required!",
+                        name: "password",
+                      },
+                    });
+                  }
+                  clearError("password");
+                  setFormData({ ...formData, password: e.currentTarget.value });
+                }}
+              />
+            </div>
+          </Form>
+          <div className="flex mt-10 justify-between sm:w-full w-80">
+            <Checkbox label="Remember me?" />
+            <a
+              className="flex text-blue-700 cursor-pointer"
+              onClick={() => router.push("/forgot-password")}
+            >
+              forgot password?
+            </a>
           </div>
-        </Form>
-        <div className="flex mt-10 justify-between">
-          <Checkbox label="Remember me?" />
-          <a
-            className="flex text-blue-700 cursor-pointer"
-            onClick={() => router.push("/forgot-password")}
-          >
-            forgot password?
-          </a>
-        </div>
-        <div className="flex flex-wrap items-center mt-16 xl:justify-between ">
-          <div className="w-48">
+          <div className="flex flex-wrap items-center mt-16 sm:justify-between  justify-center">
             <Button
               type="primary"
               text="Sign In"
               className="mt-8"
               onClick={() => handleSubmit()}
             />
-          </div>
-          <div className="flex mt-8">
-            Not a member yet ?{" "}
-            <a
-              className="text-blue-700 ml-2 cursor-pointer"
-              onClick={() => router.push("/sign-up")}
-            >
-              Sign Up
-            </a>
+            <div className="flex mt-8">
+              Not a member yet ?{" "}
+              <a
+                className="text-blue-700 ml-2 cursor-pointer"
+                onClick={() => router.push("/sign-up")}
+              >
+                Sign Up
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -78,7 +78,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               <ProfileForm />
             )}
           </div>
-          <div className="flex flex-row-reverse sm:mt-64 sm:mx-34 mr-32">
+          <div className="flex flex-row-reverse sm:mt-16 sm:mx-34 mr-32">
             <Button
               type="primary"
               size="md"

@@ -16,10 +16,7 @@ export default function ForgotPassword() {
     <div className="flex flex-col justify-center items-center">
       <BlueIsaacLogo className="mb-4 mt-16" />
       <OutlinedForm>
-        <div
-          className="inline-flex flex-col space-y-11 items-center justify-end"
-          style={{ width: "402px", height: "323px" }}
-        >
+        <div className="inline-flex flex-col space-y-11 items-center justify-end">
           <div className="flex flex-col space-y-1.5 items-center justify-start">
             <HeaderText color="black" text="Forgot password?" size="sm" />
 
@@ -33,26 +30,20 @@ export default function ForgotPassword() {
             className="flex flex-col space-y-12 items-center min-w-min-96 justify-end"
             style={{ height: "146px" }}
           >
-            <div className="flex flex-col items-start justify-center px-5 py-1 rounded-xl">
+            <div className=" flex flex-col items-start justify-center px-5 py-1 rounded-xl">
               <InputField
-                className=""
+                className="sm:w-96 w-80"
                 placeholder="Email"
                 size="lg"
-                style={{ width: "400px" }}
               />
             </div>
 
-            <div
-              className="relative"
-              style={{ width: "400px", height: "40px" }}
-            >
-              <div className="relative" style={{ width: 400, height: 40 }}>
-                <Button
-                  text=" Reset password"
-                  size="xl"
-                  onClick={() => router.push("/forgot-password/check-email")}
-                />
-              </div>
+            <div className="sm:w-96 w-80" style={{ height: "40px" }}>
+              <Button
+                text=" Reset password"
+                size="xl"
+                onClick={() => router.push("/forgot-password/check-email")}
+              />
             </div>
           </div>
           <div
