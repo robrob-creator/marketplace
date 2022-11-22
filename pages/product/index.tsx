@@ -73,7 +73,7 @@ export default function Installation() {
       <WhatsNewCard />
       {/*<InformationCard />*/}
       <SimilarCard />
-      {/* <MoreCard />*/}
+      <MoreCard />
       <Footer />
     </div>
   );
