@@ -31,7 +31,7 @@ export default function Homes() {
       />
       {!authenticated && <Banner />}
       <Tabs />
-      <div className="flex flex-wrap mt-8 lg:m-0 md:m-0 mr-8">
+      <div className="flex flex-wrap mt-8 justify-center">
         {data.map((item, index) => {
           return (
             <div key="" onClick={() => redirect()}>
