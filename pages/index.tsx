@@ -18,10 +18,13 @@ export default function Homes() {
     "1",
     "1",
     "1",
+    "1",
+    "1",
   ]);
   const redirect = () => {
     router.push("/product");
   };
+  console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
     <div>
       <Head>Marketplace</Head>

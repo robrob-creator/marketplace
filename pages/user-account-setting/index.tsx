@@ -1,13 +1,11 @@
 import { useRouter } from "next/router";
 import {
   WhiteNavBar,
-  SideBar,
   Line,
-  Form,
-  InputField,
   UserAvatar,
   Button,
 } from "project-isaac-components";
+import { SideBar } from "../../components/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,

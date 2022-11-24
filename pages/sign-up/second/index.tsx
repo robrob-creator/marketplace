@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import {
   Layout,
@@ -9,11 +10,19 @@ import {
   BlueIsaacLogo,
   Button,
 } from "project-isaac-components";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { createUser } from "../../../services/customerAcount";
 
-export default function RegisterTwo() {
+export default function RegisterTwo(props: any) {
+  const [formData, setFormData] = useState({});
   const router = useRouter();
+
+  useEffect(() => {
+    setFormData({ ...props.data });
+  }, [props.data]);
+
   return (
     <>
       <Layout>
@@ -24,7 +33,7 @@ export default function RegisterTwo() {
           <HeaderText
             text="Sign Up"
             color="black"
-            fontStyle="font-medium"
+            fontStyle="medium"
             className="mt-10 sm:ml-0 ml-4"
             size="lg"
           />
@@ -36,11 +45,23 @@ export default function RegisterTwo() {
                     placeholder="First Name"
                     type="text"
                     className="my-4"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        firstName: e.currentTarget.value,
+                      })
+                    }
                   />
                   <div className="w-36">
                     <PhoneInput
                       placeholder="Mobile Phone Number"
                       value="63"
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          mobileNumber: e,
+                        })
+                      }
                       buttonStyle={{
                         width: 80,
                         height: 56,
@@ -77,11 +98,23 @@ export default function RegisterTwo() {
                     placeholder="Country"
                     type="text"
                     className="my-4"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        country: e.currentTarget.value,
+                      })
+                    }
                   />
                   <InputField
                     placeholder="City/Town"
                     type="text"
                     className="my14"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        city: e.currentTarget.value,
+                      })
+                    }
                   />
                 </div>
                 <div>
@@ -89,13 +122,34 @@ export default function RegisterTwo() {
                     placeholder="Last Name"
                     type="text"
                     className="my-4"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        lastName: e.currentTarget.value,
+                      })
+                    }
                   />
                   <InputField
                     placeholder="Company Name"
                     type="text"
                     className="my-4"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        companyName: e.currentTarget.value,
+                      })
+                    }
                   />
-                  <InputField placeholder="Province/State" className="my-4" />
+                  <InputField
+                    placeholder="Province/State"
+                    className="my-4"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        state: e.currentTarget.value,
+                      })
+                    }
+                  />
                 </div>
               </div>
             </Form>
@@ -121,7 +175,7 @@ export default function RegisterTwo() {
                   type="primary"
                   text="SUBMIT"
                   className="mt-8 "
-                  onClick={() => router.push("/")}
+                  onClick={() => createUser({ ...formData })}
                 />
               </div>
               <div className="flex mt-8">
@@ -141,3 +195,10 @@ export default function RegisterTwo() {
     </>
   );
 }
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  let data = context.query;
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+};

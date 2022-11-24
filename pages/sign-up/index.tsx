@@ -7,8 +7,11 @@ import {
   BlueIsaacLogo,
   Button,
 } from "project-isaac-components";
+import { useState } from "react";
+import { userModel } from "../../models/userModel";
 
 export default function SignUp() {
+  const [formData, setFormData] = useState({});
   const router = useRouter();
   return (
     <Layout>
@@ -19,27 +22,45 @@ export default function SignUp() {
         <HeaderText
           text="Sign Up"
           color="black"
-          fontStyle="font-medium"
+          fontStyle="medium"
           className="mt-10"
           size="lg"
         />
         <Form bordered={false}>
           <div className="sm:w-full w-80">
-            <InputField placeholder="Name" className="my-4" />
+            <InputField
+              placeholder="Name"
+              className="my-4"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, name: e.currentTarget.value })
+              }
+            />
             <InputField
               placeholder="Email address"
               className="my-4"
               type="email"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, email: e.currentTarget.value })
+              }
             />
             <InputField
               placeholder="Password"
               className="my-4"
               type="password"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, password: e.currentTarget.value })
+              }
             />
             <InputField
               placeholder="Confirm password"
               className="my-4"
               type="password"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({
+                  ...formData,
+                  confirmPassword: e.currentTarget.value,
+                })
+              }
             />
 
             <div className="flex flex-wrap justify-between align sm:mt-32 items-center">
@@ -48,7 +69,12 @@ export default function SignUp() {
                   type="primary"
                   text="NEXT"
                   className="mt-8 "
-                  onClick={() => router.replace("/sign-up/second")}
+                  onClick={() =>
+                    router.replace({
+                      pathname: "/sign-up/second",
+                      query: formData,
+                    })
+                  }
                 />
               </div>
               <div className="flex text-center mt-8">
