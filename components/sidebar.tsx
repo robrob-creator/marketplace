@@ -8,7 +8,7 @@ export const SideBar = (): JSX.Element => {
       <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen border border-gray-200">
         <div className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full">
           <div
-            className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full"
+            className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full cursor-pointer"
             onClick={() => router.push("/user-account-setting")}
           >
             <CogIcon />
@@ -21,7 +21,7 @@ export const SideBar = (): JSX.Element => {
           </div>
         </div>
         <div className="inline-flex space-x-2.5 items-center justify-between w-full h-20 px-5 py-10">
-          <div className="flex space-x-2.5 items-center justify-start w-3/4 px-2.5 py-1 rounded-full">
+          <div className="flex space-x-2.5 items-center justify-start w-3/4 px-2.5 py-1 rounded-full cursor-pointer">
             <GridIcon />
             <p className="text-xs text-gray-600 sm:inline-block hidden">
               Dashboards
@@ -33,7 +33,7 @@ export const SideBar = (): JSX.Element => {
         </div>
         <div className="inline-flex space-x-2.5 items-center justify-between w-full h-20 px-5 py-10">
           <div
-            className="inline-flex space-x-2.5 items-center justify-start py-1 sm:pl-2.5 sm:pr-14 pr-4 pl-2 bg-blue-100 rounded-full"
+            className="inline-flex space-x-2.5 items-center justify-start py-1 sm:pl-2.5 sm:pr-14 pr-4 pl-2 bg-blue-100 rounded-full cursor-pointer"
             onClick={() => router.push("/user-account-setting/my-apps")}
           >
             <Puzzle />

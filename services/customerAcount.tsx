@@ -2,7 +2,7 @@ import { userModel } from "../models/userModel";
 
 export const createUser = async (body: userModel) => {
   console.log("data", body);
-  const rawResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -11,7 +11,7 @@ export const createUser = async (body: userModel) => {
     },
     body: JSON.stringify({ body }),
   });
-  const content = await rawResponse.json();
+  const content = await response.json();
 
   console.log(content);
 };

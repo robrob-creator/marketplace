@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { WhiteNavBar, BasicCard } from "project-isaac-components";
+import { WhiteNavBar, BasicCard, Text } from "project-isaac-components";
 import { SideBar } from "../../components/sidebar";
 import { useState } from "react";
 import {
@@ -35,9 +35,9 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
 
           <div className="sm:py-8 sm:px-16 sm:mx-0 mx-8 ">
             <div className="inline-flex flex-col space-y-11 items-start justify-start w-full ">
-              <p className="text-base font-medium leading-normal">
+              <Text color="black" fontStyle="medium">
                 New installed
-              </p>
+              </Text>
               <div className="flex flex-col space-y-12 items-start justify-start  bg ">
                 <div
                   className="flex flex-wrap gap-14 items-start justify-start "
@@ -65,9 +65,9 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               </div>
             </div>
             <div className="inline-flex flex-col space-y-11 mt-14 items-start justify-start w-full ">
-              <p className="text-base font-medium leading-normal">
+              <Text color="black" fontStyle="medium">
                 New installed
-              </p>
+              </Text>
               <div className="flex flex-col space-y-12 items-start justify-start  bg ">
                 <div className="flex flex-wrap gap-14 items-start justify-start ">
                   <BasicCard title="App Name" />
