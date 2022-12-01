@@ -2,13 +2,12 @@ import { useRouter } from "next/router";
 import {
   WhiteNavBar,
   ArrowLeft,
-  AppCard,
+  AppCard,SideBar,
   DataCard,
   List,
   InformationCard,
   BasicDataCard,
 } from "project-isaac-components";
-import { SideBar } from "../../components/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
