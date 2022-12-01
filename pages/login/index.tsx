@@ -63,14 +63,14 @@ export default function Home({ email, password, error }: SignProps) {
         </div>
         <HeaderText
           text="Sign In"
-          fontStyle="font-medium"
+          fontStyle="medium"
           color="black"
           size="md"
-          className="mt-10 sm:ml-0 ml-4 "
+          className="mt-10 sm:ml-0 ml-5 "
         />
-        <div className="sm:block grid place-items-center">
+        <div className="mx-5">
           <Form bordered={false}>
-            <div className="sm:w-full w-80  gap-2">
+            <div className="sm:w-full w-96  gap-2">
               <InputField
                 name="email"
                 placeholder="Email"

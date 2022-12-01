@@ -6,9 +6,12 @@ import {
   DataCard,
   List,
   InformationCard,
+  SideBar,
+  CogIcon,
+  Puzzle,
+  GridIcon,
   BasicDataCard,
 } from "project-isaac-components";
-import { SideBar } from "../../components/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
@@ -28,7 +31,25 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
     <div>
       <WhiteNavBar />
       <div className="flex">
-        <SideBar />
+        <SideBar
+          items={[
+            {
+              icon: <CogIcon />,
+              name: "Account Settings",
+              notification: 48,
+            },
+            {
+              icon: <GridIcon />,
+              name: "Dashboards",
+              notification: 48,
+            },
+            {
+              icon: <Puzzle />,
+              name: "My Apps",
+              notification: 44,
+            },
+          ]}
+        />
         <div className="flex-auto bg-gray-100">
           <div
             className="flex items-center justify-start  pr-96 pt-5 pb-4 bg-white border border-gray-200 w-full"

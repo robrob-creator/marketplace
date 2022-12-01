@@ -3,9 +3,12 @@ import {
   WhiteNavBar,
   Line,
   UserAvatar,
+  SideBar,
   Button,
+  CogIcon,
+  Puzzle,
+  GridIcon,
 } from "project-isaac-components";
-import { SideBar } from "../../components/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
@@ -25,7 +28,25 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
     <div>
       <WhiteNavBar />
       <div className="flex">
-        <SideBar />
+        <SideBar
+          items={[
+            {
+              icon: <CogIcon />,
+              name: "Account Settings",
+              notification: 48,
+            },
+            {
+              icon: <GridIcon />,
+              name: "Dashboards",
+              notification: 48,
+            },
+            {
+              icon: <Puzzle />,
+              name: "My Apps",
+              notification: 44,
+            },
+          ]}
+        />
         <div className="flex-auto sm:py-8 sm:px-16">
           <div className="inline-flex space-x-3.5 items-center justify-start mx-4 my-8">
             <UserAvatar className="w-10 h-full rounded-lg" />
