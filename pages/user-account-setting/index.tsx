@@ -1,8 +1,16 @@
 import { useRouter } from "next/router";
 import {
-  Line,CogIcon,GridIcon,Puzzle,
-  UserAvatar,SideBar,NavigationBar,
-  Button,Dropdown,Footer,DottedMenuIcon
+  Line,
+  CogIcon,
+  GridIcon,
+  Puzzle,
+  UserAvatar,
+  SideBar,
+  NavigationBar,
+  Button,
+  Dropdown,
+  Footer,
+  DottedMenuIcon,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -12,8 +20,26 @@ import {
   ProfileForm,
 } from "../../components/forms/editProfile";
 
-const rightElement = <div className="inline-flex gap-5"><input className="w-[271px] h-[40px] border rounded-md p-3 border-[#D9D9D9]" placeholder="Search"/><div className="my-auto cursor-pointer"><DottedMenuIcon/></div><UserAvatar className="ml-5"/></div>
-const centerElement = <div className="inline-flex gap-1 font-semibold"><UserAvatar/><Dropdown children label="Grills092"/></div>
+const rightElement = (
+  <div className="inline-flex gap-5">
+    <input
+      className="w-[271px] h-[40px] border rounded-md p-3 border-[#D9D9D9]"
+      placeholder="Search"
+    />
+    <div className="my-auto cursor-pointer">
+      <DottedMenuIcon />
+    </div>
+    <UserAvatar className="ml-5" />
+  </div>
+);
+const centerElement = (
+  <div className="inline-flex gap-1 font-semibold">
+    <UserAvatar />
+    <Dropdown label="Grills092">
+      <p></p>
+    </Dropdown>
+  </div>
+);
 type sideNavProps = {
   view: "profile" | "email" | "password";
 };
@@ -24,47 +50,43 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
   return (
     <div>
-    
-      <NavigationBar rightElements={rightElement} centerElements={centerElement}  />
+      <NavigationBar
+        rightElements={rightElement}
+        centerElements={centerElement}
+      />
       <div className="flex">
- 
-   <div>
-      <SideBar  items={[
-    {
-      icon: <CogIcon />,
-      name: 'Home',
-      notification: 28,
-    },
-    {
-      icon: <GridIcon />,
-      name: 'Analytics',
-      notification:5
-    },
-    {
-      icon: <Puzzle />,
-      name: 'My Apps',
-      notification: 12,
-      handleClick: ()=>{router.push('/user-account-setting/my-apps')}
-    },
-    {
-      icon: <Puzzle />,
-      name: 'Account Settings',
-      notification: 3,
-      className:"border-t-5"
-    }
-  ]}/>
+        <div>
+          <SideBar
+            items={[
+              {
+                icon: <CogIcon />,
+                name: "Home",
+                notification: 28,
+              },
+              {
+                icon: <GridIcon />,
+                name: "Analytics",
+                notification: 5,
+              },
+              {
+                icon: <Puzzle />,
+                name: "My Apps",
+                notification: 12,
+                handleClick: () => {
+                  router.push("/user-account-setting/my-apps");
+                },
+              },
+              {
+                icon: <Puzzle />,
+                name: "Account Settings",
+                notification: 3,
+                className: "border-t-5",
+              },
+            ]}
+          />
+        </div>
 
-
-
-
-
-
-
-
-   </div>
-
-    
-    {/* user account contents */}
+        {/* user account contents */}
 
         <div className="flex-auto sm:py-8 sm:px-16">
           <div className="inline-flex space-x-3.5 items-center justify-start mx-4 my-8">
@@ -127,7 +149,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
           </div>
         </div>
       </div>
-       <Footer/>
+      <Footer />
     </div>
   );
 }

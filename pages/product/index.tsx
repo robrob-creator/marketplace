@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import {
   ArrowLeft,
   ProductBanner,
-  Bannesr,
+  InfoBanner,
   DescriptionCard,
   WhatsNewCard,
   InformationCard,
@@ -68,7 +68,7 @@ export default function Installation() {
           </div>
         }
       />
-      <Bannesr />
+      <InfoBanner />
       <DescriptionCard />
       <WhatsNewCard />
       {/*<InformationCard />*/}
