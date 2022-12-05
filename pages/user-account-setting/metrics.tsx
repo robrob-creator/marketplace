@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import {
   WhiteNavBar,
   ArrowLeft,
-  AppCard,
+  AppCard,SideBar,
   DataCard,
   List,
   InformationCard,

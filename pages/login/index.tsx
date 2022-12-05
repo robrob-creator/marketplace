@@ -39,7 +39,7 @@ export default function Home({ email, password, error }: SignProps) {
         email: { errorMessage: "Email required !", name: "email" },
       });
 
-    router.push("/user-account-setting");
+    router.push("/user-account-setting/home");
   };
 
   const clearError = (name: string) => {

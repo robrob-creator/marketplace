@@ -1,12 +1,16 @@
 import { useRouter } from "next/router";
 import {
-  WhiteNavBar,
   BasicCard,
   Text,
   SideBar,
   CogIcon,
-  Puzzle,
   GridIcon,
+  Puzzle,
+  Footer,
+  UserAvatar,
+  Dropdown,
+  NavigationBar,
+  DottedMenuIcon,
 } from "project-isaac-components";
 import { useState } from "react";
 import {
@@ -22,28 +26,61 @@ type sideNavProps = {
 export default function RegisterTwo({ view = "email" }: sideNavProps) {
   const [showForm, setShowForm] = useState(view);
   const router = useRouter();
+  const rightElement = (
+    <div className="inline-flex gap-5">
+      <input
+        className="w-[271px] h-[40px] border rounded-md p-3 border-[#D9D9D9]"
+        placeholder="Search"
+      />
+      <div className="my-auto cursor-pointer">
+        <DottedMenuIcon />
+      </div>
+      <UserAvatar className="ml-5" />
+    </div>
+  );
+  const centerElement = (
+    <div className="inline-flex gap-1 font-semibold">
+      <UserAvatar />
+      <Dropdown label="Grills092">
+        <p></p>
+      </Dropdown>
+    </div>
+  );
 
   return (
     <div>
-      <WhiteNavBar />
+      <NavigationBar
+        rightElements={rightElement}
+        centerElements={centerElement}
+      />
       <div className="flex">
         <SideBar
           items={[
             {
               icon: <CogIcon />,
-              name: "Account Settings",
-              notification: 48,
-              handleClick: () => router.push("/"),
+              name: "Home",
+              notification: 28,
+              handleClick: () => {
+                router.push("./");
+              },
             },
             {
               icon: <GridIcon />,
-              name: "Dashboards",
-              notification: 48,
+              name: "Analytics",
+              notification: 5,
             },
             {
               icon: <Puzzle />,
               name: "My Apps",
-              notification: 44,
+              notification: 12,
+              handleClick: () => {
+                router.push("/user-account-setting/my-apps");
+              },
+            },
+            {
+              icon: <Puzzle />,
+              name: "Account Settings",
+              notification: 3,
             },
           ]}
         />
@@ -120,6 +157,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
