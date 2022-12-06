@@ -21,7 +21,8 @@ import {
   InfoIcon,
   CheckedIcon,
   AddCirlceIcon,
-  ArrowRightIcon,
+  List,
+  Text,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -30,6 +31,15 @@ import {
   EmailForm,
   ProfileForm,
 } from "../../components/forms/editProfile";
+
+interface LabelProps {
+  label?: string;
+  icon?: React.ReactNode;
+}
+interface ValueProps {
+  label?: string;
+  icon?: React.ReactNode;
+}
 
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
@@ -54,7 +64,7 @@ const rightElement = (
     {" "}
     {input}{" "}
     <div className="my-auto cursor-pointer">
-      <DottedMenuIcon />
+      <DottedMenuIcon width="18px" height="4px" />
     </div>
     <UserAvatar className="ml-5" />
   </div>
@@ -65,25 +75,27 @@ const LeftElement = () => {
     <div className="sm:inline-flex hidden gap-1 font-semibold ">
       <UserAvatar className="w-8" />
       <Dropdown label="Grills092">
-        <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
-          <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600 ">
-              Personal account
-            </p>
-          </div>
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px] rounded-t-lg bg-white border border-[#D9D9D9]   ">
+          <p className="text-base font-medium text-[#5C5C5C] ">
+            Personal account
+          </p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px]  bg-white ">
           <div className="inline-flex justify-between items-center">
-            <div className="flex space-x-2.5 w-28 h-full">
+            <div className="flex space-x-2.5 w-28 h-full items-center">
               <UserAvatar />
-              <p className="text-base font-medium text-gray-600">Grills1031</p>
+              <p className="text-base font-medium text-[#5C5C5C]">Grills1031</p>
             </div>
-            <div className="flex space-x-5 items-center  w-1/6 h-6">
-              <CheckedIcon />
-              <CogIcon />
+            <div className="flex space-x-5 w-1/6 h-6">
+              <CheckedIcon width="24px" height="24px" />
+              <CogIcon width="24px" height="24px" />
             </div>
           </div>
-          <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600">Organization</p>
-          </div>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px]   bg-white ">
+          <p className="text-base font-medium text-gray-600">Organization</p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px] rounded-b-slg bg-white drop-shadow-2xl border-t border-[#D9D9D9] ">
           <div
             className="inline-flex gap-4 items-center cursor-pointer"
             onClick={() =>
@@ -156,89 +168,89 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             <div className="bg-gray-300 rounded-lg">
               <WaveIcon />
             </div>
-            <p className="sm:text-xl text-sm font-semibold">
-              Hey Grills, Welcome to ISAAC!
-            </p>
+
+            <Text
+              className="font-semibold text-xl"
+              text="Hey Grills, Welcome to ISAAC!"
+              color="black"
+            />
           </div>
 
-          <div className="flex xl:w-[1100px] flex-col  px-12 py-8 bg-white border rounded-2xl border-gray-200 mt-10">
+          <div className="flex xl:w-[1100px] flex-col  px-[50px] py-[30px] bg-white border rounded-2xl border-gray-200 mt-10">
             <div className="flex flex-col space-y-8 items-start justify-start">
               <div className="inline-flex space-x-2.5 items-center justify-start">
-                <BulbIcon />
-                <p className="text-2xl font-semibold text-gray-500">Explore</p>
+                <BulbIcon width="40" height="40" />
+                <p className="text-xl font-semibold text-[#687782]">Explore</p>
               </div>
               <div className="flex flex-col w-full">
-                <div className="inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers">
-                  <div className="flex items-center">
-                    <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 p-3 rounded-md bg-gray-300">
-                        <StarIcon />
-                      </div>
-                      <p className="text-base font-medium text-gray-500">
-                        Try out Expo
-                      </p>
-                    </div>
-                  </div>
-                  <div className="px-3">
-                    <ArrowDiagonal className="hover:scale-150" />
-                  </div>
-                </div>
+                <List
+                  data={[
+                    {
+                      label: (
+                        <ListItemLabel
+                          label="Try out expo"
+                          icon=<StarIcon width="30px" height="30px" />
+                        />
+                      ),
+                      value: (
+                        <ListItemValue
+                          icon=<ArrowDiagonal width="16px" height="20px" />
+                        />
+                      ),
+                    },
+                    {
+                      label: (
+                        <ListItemLabel
+                          label="Explore APIs and guides with our docs"
+                          icon=<FileIcon width="30px" height="30px" />
+                        />
+                      ),
+                      value: (
+                        <ListItemValue
+                          icon=<ArrowDiagonal width="16px" height="20px" />
+                        />
+                      ),
+                    },
+                    {
+                      label: (
+                        <ListItemLabel
+                          label="Download our apps"
+                          icon=<Puzzle width="30px" height="30px" />
+                        />
+                      ),
+                      value: (
+                        <ListItemValue
+                          icon=<ArrowDiagonal width="16px" height="20px" />
+                        />
+                      ),
+                    },
+                    {
+                      label: (
+                        <ListItemLabel
+                          label="Learn about expo"
+                          icon=<BookIcon width="30px" height="30px" />
+                        />
+                      ),
+                      value: (
+                        <ListItemValue
+                          icon=<ArrowDiagonal width="16px" height="20px" />
+                        />
+                      ),
+                    },
+                  ]}
+                />
 
-                <div className="inline-flex items-center justify-between rounded-md  hover:bg-gray-100 cursor-pointer">
-                  <div className="flex items-center ">
-                    <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
-                        <FileIcon />
-                      </div>
-                      <p className="text-base font-medium text-gray-500">
-                        Explore APIs and guides with our docs
-                      </p>
-                    </div>
-                  </div>
-                  <div className="px-3">
-                    <ArrowDiagonal className="hover:scale-150" />
-                  </div>
-                </div>
-
-                <div className="inline-flex items-center justify-between  rounded-md  hover:bg-gray-100 cursor-pointer">
-                  <div className="flex items-center ">
-                    <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
-                        <Puzzle />
-                      </div>
-                      <p className="text-base font-medium text-gray-500">
-                        Download our apps
-                      </p>
-                    </div>
-                  </div>
-                  <div className="px-3">
-                    <ArrowDiagonal className="hover:scale-150" />
-                  </div>
-                </div>
-
-                <div className="inline-flex  items-center justify-between rounded-md  hover:bg-gray-100 cursor-pointer ">
-                  <div className="flex items-center ">
-                    <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
-                        <BookIcon />
-                      </div>
-                      <p className="text-base font-medium text-gray-500">
-                        Learn about Expo Application Services
-                      </p>
-                    </div>
-                  </div>
-                  <div className="px-3">
-                    <ArrowDiagonal className="hover:scale-150" />
-                  </div>
-                </div>
+                {/* 
+              list item div */}
+                <div className="inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers h-28 px-[10px]"></div>
               </div>
             </div>
           </div>
 
           {/*            Join us section */}
-          <div className="mt-10 inline-flex flex-col space-y-5 items-start justify-start p-12 bg-white border rounded-2xl border-gray-200">
-            <div className="inline-flex space-x-2.5 items-center justify-start">
-              <InfoIcon />
+          <div className="mt-10 p-[50px] inline-flex flex-col gap-[20px] space-y-5 items-start justify-start bg-white border rounded-2xl border-gray-200">
+            <div className="inline-flex gap-[10px] items-center justify-start">
+              <InfoIcon width="40px" height="40px" />
               <p className="w-2/3 text-2xl font-semibold text-gray-500">
                 Join Us
               </p>
@@ -248,7 +260,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
               hours!
               <a
                 href="#"
-                className="font-medium text-blue-600 dark:text-blue-500 underline ml-2"
+                className="font-medium text-[#2843DE]  underline ml-2 text-xl"
               >
                 Read more
               </a>
@@ -260,3 +272,25 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
     </div>
   );
 }
+
+const ListItemLabel = ({ label, icon }: LabelProps) => {
+  return (
+    <div className="flex items-center">
+      <div className="inline-flex items-center gap-3">
+        <div className="flex items-center justify-center bg-[#D9D9D9] rounded-md h-[50px] w-[50px]">
+          {icon}
+        </div>
+        <Text
+          text={label}
+          color="#687782"
+          className="text-base font-medium text-gray-500"
+        />
+        {/* <p className="text-base font-medium text-gray-500">{label}</p> */}
+      </div>
+    </div>
+  );
+};
+
+const ListItemValue = ({ label, icon }: ValueProps) => {
+  return <div className="px-3">{icon}</div>;
+};
