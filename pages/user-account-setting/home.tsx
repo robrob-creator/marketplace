@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import {
   Line,
   CogIcon,
@@ -19,6 +19,8 @@ import {
   BookIcon,
   ArrowDiagonal,
   InfoIcon,
+  CheckedIcon,
+  AddCirlceIcon,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -27,6 +29,7 @@ import {
   EmailForm,
   ProfileForm,
 } from "../../components/forms/editProfile";
+
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -55,12 +58,47 @@ const rightElement = (
     <UserAvatar className="ml-5" />
   </div>
 );
-const leftElement = (
-  <div className="inline-flex gap-1 font-semibold">
-    <UserAvatar className="w-8" />
-    <Dropdown children label="Grills092" />
-  </div>
-);
+const LeftElement = () => {
+  const router = useRouter();
+  return (
+    <div className="inline-flex gap-1 font-semibold">
+      <UserAvatar className="w-8" />
+      <Dropdown label="Grills092">
+        <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
+          <div className="border-b border-[#D9D9D9] py-4">
+            <p className="text-base font-medium text-gray-600 ">
+              Personal account
+            </p>
+          </div>
+          <div className="inline-flex justify-between items-center">
+            <div className="flex space-x-2.5 w-28 h-full">
+              <UserAvatar />
+              <p className="text-base font-medium text-gray-600">Grills1031</p>
+            </div>
+            <div className="flex space-x-5 items-center  w-1/6 h-6">
+              <CheckedIcon />
+              <CogIcon />
+            </div>
+          </div>
+          <div className="border-b border-[#D9D9D9] py-4">
+            <p className="text-base font-medium text-gray-600">Organization</p>
+          </div>
+          <div
+            className="inline-flex gap-4 items-center cursor-pointer"
+            onClick={() =>
+              router.push("/user-account-setting/create-organization")
+            }
+          >
+            <AddCirlceIcon />
+            <p className="text-base font-medium text-gray-600">
+              Create Organiztion
+            </p>
+          </div>
+        </div>
+      </Dropdown>
+    </div>
+  );
+};
 type sideNavProps = {
   view: "profile" | "email" | "password";
 };
@@ -68,21 +106,21 @@ type sideNavProps = {
 export default function RegisterTwo({ view = "profile" }: sideNavProps) {
   const [showForm, setShowForm] = useState(view);
   const router = useRouter();
-
   return (
     <div className="bg-gray-100">
       <NavigationBar
         className="bg-white border-b border-gray-300"
         rightElements={rightElement}
-        leftElements={leftElement}
+        leftElements={<LeftElement />}
       />
-      <div className="flex">
+      <div className="md:inline-flex">
         <div>
           <SideBar
             items={[
               {
                 icon: <CogIcon />,
                 name: "Home",
+                isActive: true,
                 notification: 28,
               },
               {
@@ -123,29 +161,17 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             </p>
           </div>
 
-          <div
-            className="flex flex-col items-start justify-start px-12 py-8 bg-white border rounded-2xl border-gray-200 mt-10"
-            style={{ width: "1388px", height: "530px" }}
-          >
-            <div
-              className="flex flex-col space-y-8 items-start justify-start"
-              style={{ width: "1292.36px", height: "470px" }}
-            >
+          <div className="flex flex-col items-start justify-start px-12 py-8 bg-white border rounded-2xl border-gray-200 mt-10">
+            <div className="flex flex-col space-y-8 items-start justify-start">
               <div className="inline-flex space-x-2.5 items-center justify-start">
                 <BulbIcon />
                 <p className="text-2xl font-semibold text-gray-500">Explore</p>
               </div>
-              <div
-                className="flex flex-col items-start justify-start"
-                style={{ width: "1292.36px", height: "400px" }}
-              >
-                <div
-                  className="inline-flex space-x-96 items-center justify-between px-2.5 rounded-md  bg-gray-100 "
-                  style={{ width: "1292.36px", height: "100px" }}
-                >
-                  <div className="flex items-center ">
+              <div className="flex flex-col items-start justify-start">
+                <div className="flex items-center justify-between  rounded-md w-full  bg-gray-100 cursor-pointer">
+                  <div className="flex items-center">
                     <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 h-full p-3 rounded-md bg-gray-300">
+                      <div className="flex items-center justify-center w-12 p-3 rounded-md bg-gray-300">
                         <StarIcon />
                       </div>
                       <p className="text-base font-medium text-gray-500">
@@ -154,17 +180,14 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                     </div>
                   </div>
                   <div className="px-3">
-                    <ArrowDiagonal />
+                    <ArrowDiagonal className="hover:scale-150" />
                   </div>
                 </div>
 
-                <div
-                  className="inline-flex space-x-96 items-center justify-between px-2.5 rounded-md "
-                  style={{ width: "1292.36px", height: "100px" }}
-                >
+                <div className="inline-flex space-x-96 items-center justify-between rounded-md w-full hover:bg-gray-100 cursor-pointer">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 h-full p-3  rounded-md">
+                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
                         <FileIcon />
                       </div>
                       <p className="text-base font-medium text-gray-500">
@@ -173,17 +196,14 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                     </div>
                   </div>
                   <div className="px-3">
-                    <ArrowDiagonal />
+                    <ArrowDiagonal className="hover:scale-150" />
                   </div>
                 </div>
 
-                <div
-                  className="inline-flex space-x-96 items-center justify-between px-2 rounded-md "
-                  style={{ width: "1292.36px", height: "100px" }}
-                >
+                <div className="inline-flex space-x-96 items-center justify-between  rounded-md w-full  hover:bg-gray-100 cursor-pointer">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 h-full p-3  rounded-md">
+                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
                         <Puzzle />
                       </div>
                       <p className="text-base font-medium text-gray-500">
@@ -192,17 +212,14 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                     </div>
                   </div>
                   <div className="px-3">
-                    <ArrowDiagonal />
+                    <ArrowDiagonal className="hover:scale-150" />
                   </div>
                 </div>
 
-                <div
-                  className="inline-flex space-x-96 items-center justify-between px-2.5 rounded-md "
-                  style={{ width: "1292.36px", height: "100px" }}
-                >
+                <div className="inline-flex space-x-96 items-center justify-between rounded-md w-full  hover:bg-gray-100 cursor-pointer ">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
-                      <div className="flex items-center justify-center w-12 h-full p-3  rounded-md">
+                      <div className="flex items-center justify-center w-12 p-3  rounded-md">
                         <BookIcon />
                       </div>
                       <p className="text-base font-medium text-gray-500">
@@ -211,7 +228,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                     </div>
                   </div>
                   <div className="px-3">
-                    <ArrowDiagonal />
+                    <ArrowDiagonal className="hover:scale-150" />
                   </div>
                 </div>
               </div>
@@ -219,10 +236,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
           </div>
 
           {/*            Join us section */}
-          <div
-            className="mt-10 inline-flex flex-col space-y-5 items-start justify-start p-12 bg-white border rounded-2xl border-gray-200"
-            style={{ width: "1388px", height: "184px" }}
-          >
+          <div className="mt-10 inline-flex flex-col space-y-5 items-start justify-start p-12 bg-white border rounded-2xl border-gray-200">
             <div className="inline-flex space-x-2.5 items-center justify-start">
               <InfoIcon />
               <p className="w-2/3 text-2xl font-semibold text-gray-500">
@@ -231,7 +245,13 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             </div>
             <p className="text-xl font-medium">
               New to Expo? Having a problem? Get help during our weekly office
-              hours! Sign up here.
+              hours!
+              <a
+                href="#"
+                className="font-medium text-blue-600 dark:text-blue-500 underline ml-2"
+              >
+                Read more
+              </a>
             </p>
           </div>
         </div>

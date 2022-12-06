@@ -38,7 +38,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
       <UserAvatar className="ml-5" />
     </div>
   );
-  const centerElement = (
+  const leftElement = (
     <div className="inline-flex gap-1 font-semibold">
       <UserAvatar />
       <Dropdown label="Grills092">
@@ -49,10 +49,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
 
   return (
     <div>
-      <NavigationBar
-        rightElements={rightElement}
-        centerElements={centerElement}
-      />
+      <NavigationBar rightElements={rightElement} leftElements={leftElement} />
       <div className="flex">
         <SideBar
           items={[
@@ -61,7 +58,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               name: "Home",
               notification: 28,
               handleClick: () => {
-                router.push("./");
+                router.push("/user-account-setting/home");
               },
             },
             {
@@ -73,6 +70,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               icon: <Puzzle />,
               name: "My Apps",
               notification: 12,
+              isActive: true,
               handleClick: () => {
                 router.push("/user-account-setting/my-apps");
               },
@@ -81,6 +79,9 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               icon: <Puzzle />,
               name: "Account Settings",
               notification: 3,
+              handleClick: () => {
+                router.push("/user-account-setting/user-account-overview");
+              },
             },
           ]}
         />
