@@ -151,8 +151,12 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
         <div className="flex flex-col w-full">
           <div className="flex  sm:py-8  sm:pl-6 pl-4  h-24 border-b bg-white border-gray-200">
             <div className="inline-flex items-center justify-start gap-4">
-              <div className="flex items-center justify-center sm:w-10 sm:h-full bg-gray-300 rounded-lg">
-                <CogIcon className="w-3/4 h-3/4 rounded-lg" />
+              <div className="flex items-center justify-center sm:w-10  w-[40px] h-[40px] bg-gray-300 rounded-lg">
+                <CogIcon
+                  width="30px"
+                  height="30px"
+                  className="w-3/4 h-3/4 rounded-lg"
+                />
               </div>
               <p className="text-xl sm:font-semibold ">Account Overview</p>
             </div>
