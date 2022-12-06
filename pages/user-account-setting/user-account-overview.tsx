@@ -102,6 +102,9 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 isActive: true,
                 notification: 3,
                 className: "border-t-2",
+                handleClick: () => {
+                  router.push("/user-account-setting/user-account-overview");
+                },
               },
             ]}
           />
