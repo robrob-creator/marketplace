@@ -11,6 +11,8 @@ import {
   Dropdown,
   NavigationBar,
   DottedMenuIcon,
+  AddCirlceIcon,
+  CheckedIcon,
 } from "project-isaac-components";
 import { useState } from "react";
 import {
@@ -38,18 +40,58 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
       <UserAvatar className="ml-5" />
     </div>
   );
-  const leftElement = (
-    <div className="inline-flex gap-1 font-semibold">
-      <UserAvatar />
-      <Dropdown label="Grills092">
-        <p></p>
-      </Dropdown>
-    </div>
-  );
+  const LeftElement = () => {
+    const router = useRouter();
+    return (
+      <div className="inline-flex gap-1 font-semibold">
+        <UserAvatar className="w-8" />
+        <Dropdown label="Grills092">
+          <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
+            <div className="border-b border-[#D9D9D9] py-4">
+              <p className="text-base font-medium text-gray-600 ">
+                Personal account
+              </p>
+            </div>
+            <div className="inline-flex justify-between items-center">
+              <div className="flex space-x-2.5 w-28 h-full">
+                <UserAvatar />
+                <p className="text-base font-medium text-gray-600">
+                  Grills1031
+                </p>
+              </div>
+              <div className="flex space-x-5 items-center  w-1/6 h-6">
+                <CheckedIcon />
+                <CogIcon />
+              </div>
+            </div>
+            <div className="border-b border-[#D9D9D9] py-4">
+              <p className="text-base font-medium text-gray-600">
+                Organization
+              </p>
+            </div>
+            <div
+              className="inline-flex gap-4 items-center cursor-pointer"
+              onClick={() =>
+                router.push("/user-account-setting/create-organization")
+              }
+            >
+              <AddCirlceIcon />
+              <p className="text-base font-medium text-gray-600">
+                Create Organiztion
+              </p>
+            </div>
+          </div>
+        </Dropdown>
+      </div>
+    );
+  };
 
   return (
     <div>
-      <NavigationBar rightElements={rightElement} leftElements={leftElement} />
+      <NavigationBar
+        rightElements={rightElement}
+        leftElements={<LeftElement />}
+      />
       <div className="flex">
         <SideBar
           items={[
