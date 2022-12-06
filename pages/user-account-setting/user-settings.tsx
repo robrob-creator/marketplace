@@ -79,6 +79,9 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 icon: <Puzzle />,
                 name: "Back to Dashboard",
                 notification: 34,
+                handleClick: () => {
+                  router.push("/user-account-setting/home");
+                },
               },
 
               {
@@ -92,6 +95,9 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 name: "Members",
                 notification: 3,
                 className: "border-t-2",
+                handleClick: () => {
+                  router.push("/user-account-setting/members");
+                },
               },
             ]}
           />
@@ -120,14 +126,13 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
             <Button>
               <Text text="Account setting" size="sm" />
-              <ArrowRightIcon className="ml-5" color="white" />
             </Button>
           </div>
           <p className="mt-20 ml-5 text-base font-medium">
             Account information
           </p>
 
-          <div className="w-full bg-white rounded-lg mx-5 mt-5 p-8 ">
+          <div className=" bg-white rounded-t-lg mx-5 mt-5 p-8 ">
             <div className="flex flex-1">
               <div className="inline-flex flex-col space-y-2.5  justify-start">
                 <p className="text-base font-semibold">Organization name</p>
@@ -189,7 +194,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             </div>
           </div>
 
-          <div className="inline-flex justify-end bg-white rounded-lg mx-5 p-8 ">
+          <div className="inline-flex justify-end bg-white rounded-b-lg mx-5 p-8 border-t ">
             <Button text="Save" />
           </div>
           <div className="inline-flex space-x-96 items-center justify-between px-5 bg-white mt-10 mx-5 p-8 rounded-lg">
@@ -206,9 +211,10 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
             <div className="flex items-center justify-start">
               <Button
-                type="secondary"
+                size="sm"
+                type="danger"
                 text="Delete Organization"
-                className="py-2"
+                className="p-2"
               />
             </div>
           </div>

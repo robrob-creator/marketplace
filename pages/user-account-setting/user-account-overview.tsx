@@ -99,6 +99,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
               {
                 icon: <Puzzle />,
                 name: "Account Settings",
+                isActive: true,
                 notification: 3,
                 className: "border-t-2",
               },
@@ -136,7 +137,6 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 }
               >
                 <Text text="User Settings" size="sm" />
-                <ArrowRightIcon className="ml-5" color="white" />
               </Button>
             </div>
           </div>
