@@ -109,7 +109,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
         {/* contentd */}
         <div className="flex flex-col w-full">
-          <div className="flex  sm:py-8 sm:px-16  h-24 border-b bg-white border-gray-200">
+          <div className="flex  sm:py-8 sm:px-6  h-24 border-b bg-white border-gray-200">
             <div className="inline-flex space-x-5 items-center justify-start">
               <div className="flex items-center justify-center w-10 h-full bg-gray-300 rounded-lg">
                 <CogIcon className="w-3/4 h-3/4 rounded-lg" />
