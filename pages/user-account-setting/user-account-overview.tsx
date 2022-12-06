@@ -14,6 +14,8 @@ import {
   ArrowRightIcon,
   Text,
   List,
+  CheckedIcon,
+  AddCirlceIcon,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -50,12 +52,47 @@ const rightElement = (
     <UserAvatar className="ml-5" />
   </div>
 );
-const leftElement = (
-  <div className="inline-flex gap-1 font-semibold">
-    <UserAvatar className="w-8" />
-    <Dropdown children label="Grills092" />
-  </div>
-);
+const LeftElement = () => {
+  const router = useRouter();
+  return (
+    <div className="sm:inline-flex hidden gap-1 font-semibold">
+      <UserAvatar className="w-8" />
+      <Dropdown label="Grills092">
+        <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
+          <div className="border-b border-[#D9D9D9] py-4">
+            <p className="text-base font-medium text-gray-600 ">
+              Personal account
+            </p>
+          </div>
+          <div className="inline-flex justify-between items-center">
+            <div className="flex space-x-2.5 w-28 h-full">
+              <UserAvatar />
+              <p className="text-base font-medium text-gray-600">Grills1031</p>
+            </div>
+            <div className="flex space-x-5 items-center  w-1/6 h-6">
+              <CheckedIcon />
+              <CogIcon />
+            </div>
+          </div>
+          <div className="border-b border-[#D9D9D9] py-4">
+            <p className="text-base font-medium text-gray-600">Organization</p>
+          </div>
+          <div
+            className="inline-flex gap-4 items-center cursor-pointer"
+            onClick={() =>
+              router.push("/user-account-setting/create-organization")
+            }
+          >
+            <AddCirlceIcon />
+            <p className="text-base font-medium text-gray-600">
+              Create Organiztion
+            </p>
+          </div>
+        </div>
+      </Dropdown>
+    </div>
+  );
+};
 type sideNavProps = {
   view: "profile" | "email" | "password";
 };
@@ -69,10 +106,10 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       <NavigationBar
         className="bg-white border-b border-gray-300"
         rightElements={rightElement}
-        leftElements={leftElement}
+        leftElements={<LeftElement />}
       />
       <div className="flex">
-        <div>
+        <div className="sm:block hidden">
           <SideBar
             items={[
               {
@@ -112,22 +149,22 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
         {/* contentd */}
         <div className="flex flex-col w-full">
-          <div className="flex  sm:py-8 sm:px-16  h-24 border-b bg-white border-gray-200">
-            <div className="inline-flex space-x-5 items-center justify-start">
-              <div className="flex items-center justify-center w-10 h-full bg-gray-300 rounded-lg">
+          <div className="flex  sm:py-8  sm:pl-6 pl-8  h-24 border-b bg-white border-gray-200">
+            <div className="inline-flex items-center justify-start gap-4">
+              <div className="flex items-center justify-center sm:w-10 sm:h-full bg-gray-300 rounded-lg">
                 <CogIcon className="w-3/4 h-3/4 rounded-lg" />
               </div>
-              <p className="w-5/6 text-xl font-semibold">Account Overview</p>
+              <p className="text-xl sm:font-semibold ">Account Overview</p>
             </div>
           </div>
 
-          <div className="mt-10 mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-8 rounded-lg">
-            <div className="inline-flex flex-col space-y-2.5 items-start justify-center">
+          <div className="mt-10 mx-5 inline-flex sm:flex-row   items-center justify-between px-5 bg-white p-8 rounded-lg">
+            <div className="inline-flex flex-col sm:items-start items-center justify-center gap-2">
               <div className="inline-flex space-x-1 items-center justify-start">
                 <CogIcon />
                 <p className="text-base font-semibold">Organization settings</p>
               </div>
-              <p className="text-base text-gray-600">
+              <p className="sm:text-base text-sm text-gray-600">
                 Change your organization name, company name, and more inside
                 user settings.
               </p>
@@ -144,7 +181,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             </div>
           </div>
 
-          <p className="mt-20 ml-5 text-base font-medium">
+          <p className="mt-10 ml-5 text-base font-medium">
             Account information
           </p>
 

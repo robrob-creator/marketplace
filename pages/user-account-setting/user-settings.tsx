@@ -89,6 +89,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 name: "User Settings",
                 notification: 3,
                 className: "border-t-2",
+                isActive: true,
               },
               {
                 icon: <Puzzle />,

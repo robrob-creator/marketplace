@@ -21,6 +21,7 @@ import {
   InfoIcon,
   CheckedIcon,
   AddCirlceIcon,
+  ArrowRightIcon,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -61,7 +62,7 @@ const rightElement = (
 const LeftElement = () => {
   const router = useRouter();
   return (
-    <div className="inline-flex gap-1 font-semibold">
+    <div className="sm:inline-flex hidden gap-1 font-semibold ">
       <UserAvatar className="w-8" />
       <Dropdown label="Grills092">
         <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
@@ -104,7 +105,6 @@ type sideNavProps = {
 };
 
 export default function RegisterTwo({ view = "profile" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
   const router = useRouter();
   return (
     <div className="bg-gray-100">
@@ -114,7 +114,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
         leftElements={<LeftElement />}
       />
       <div className="md:inline-flex">
-        <div>
+        <div className="sm:block hidden">
           <SideBar
             items={[
               {
@@ -151,24 +151,24 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 
         {/* home contents */}
 
-        <div className="flex flex-col sm:py-8 sm:px-16">
-          <div className="inline-flex  space-x-5 justify-start">
+        <div className="flex flex-col sm:py-8 py-12 sm:px-16">
+          <div className="inline-flex  space-x-5 sm:justify-start justify-center items-center ">
             <div className="bg-gray-300 rounded-lg">
               <WaveIcon />
             </div>
-            <p className="text-xl font-semibold">
+            <p className="sm:text-xl text-sm font-semibold">
               Hey Grills, Welcome to ISAAC!
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-start px-12 py-8 bg-white border rounded-2xl border-gray-200 mt-10">
+          <div className="flex xl:w-[1100px] flex-col  px-12 py-8 bg-white border rounded-2xl border-gray-200 mt-10">
             <div className="flex flex-col space-y-8 items-start justify-start">
               <div className="inline-flex space-x-2.5 items-center justify-start">
                 <BulbIcon />
                 <p className="text-2xl font-semibold text-gray-500">Explore</p>
               </div>
-              <div className="flex flex-col items-start justify-start">
-                <div className="flex items-center justify-between  rounded-md w-full  bg-gray-100 cursor-pointer">
+              <div className="flex flex-col w-full">
+                <div className="inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers">
                   <div className="flex items-center">
                     <div className="inline-flex items-center gap-3">
                       <div className="flex items-center justify-center w-12 p-3 rounded-md bg-gray-300">
@@ -184,7 +184,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                   </div>
                 </div>
 
-                <div className="inline-flex space-x-96 items-center justify-between rounded-md w-full hover:bg-gray-100 cursor-pointer">
+                <div className="inline-flex items-center justify-between rounded-md  hover:bg-gray-100 cursor-pointer">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
                       <div className="flex items-center justify-center w-12 p-3  rounded-md">
@@ -200,7 +200,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                   </div>
                 </div>
 
-                <div className="inline-flex space-x-96 items-center justify-between  rounded-md w-full  hover:bg-gray-100 cursor-pointer">
+                <div className="inline-flex items-center justify-between  rounded-md  hover:bg-gray-100 cursor-pointer">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
                       <div className="flex items-center justify-center w-12 p-3  rounded-md">
@@ -216,7 +216,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                   </div>
                 </div>
 
-                <div className="inline-flex space-x-96 items-center justify-between rounded-md w-full  hover:bg-gray-100 cursor-pointer ">
+                <div className="inline-flex  items-center justify-between rounded-md  hover:bg-gray-100 cursor-pointer ">
                   <div className="flex items-center ">
                     <div className="inline-flex items-center gap-3">
                       <div className="flex items-center justify-center w-12 p-3  rounded-md">
@@ -243,7 +243,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 Join Us
               </p>
             </div>
-            <p className="text-xl font-medium">
+            <p className="sm:text-xl sm:font-medium text-sm">
               New to Expo? Having a problem? Get help during our weekly office
               hours!
               <a
