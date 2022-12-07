@@ -25,6 +25,9 @@ export default function SideBarPanel({ type, activeKey }: Type) {
       notification: 3,
       className: "border-t-2",
       isActive: true,
+      handleClick: () => {
+        router.push("/user-account-setting/user-account-overview");
+      },
     },
     {
       key: "members",

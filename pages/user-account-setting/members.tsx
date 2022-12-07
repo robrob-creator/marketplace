@@ -1,30 +1,20 @@
 import { useRouter } from "next/router";
 import {
   CogIcon,
-  GridIcon,
-  Puzzle,
   UserAvatar,
-  SideBar,
   NavigationBar,
   Button,
   Dropdown,
   Footer,
   DottedMenuIcon,
   SearchCircleIcon,
-  ArrowRightIcon,
-  Text,
   List,
   AddCirlceIcon,
   CheckedIcon,
   GroupIcon,
 } from "project-isaac-components";
 import SideBarPanel from "../../components/navigation/sidebar";
-import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
+
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -96,14 +86,8 @@ const LeftElement = () => {
     </div>
   );
 };
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
 
-export default function RegisterTwo({ view = "profile" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
-  const router = useRouter();
-
+export default function Members() {
   return (
     <div className="bg-gray-100">
       <NavigationBar

@@ -12,9 +12,7 @@ import {
   CheckedIcon,
   AddCirlceIcon,
   Text,
-  InputField,
 } from "project-isaac-components";
-import { useState } from "react";
 import { AccountInformationForm } from "../../components/forms/accountInformationForm";
 import SideBarPanel from "../../components/navigation/sidebar";
 const input = (
@@ -88,14 +86,8 @@ const LeftElement = () => {
     </div>
   );
 };
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
 
-export default function RegisterTwo({ view = "profile" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
-  const router = useRouter();
-
+export default function UserSettings() {
   return (
     <div className="bg-gray-100 ">
       <NavigationBar

@@ -6,27 +6,11 @@ import {
   DataCard,
   List,
   InformationCard,
-  CogIcon,
-  Puzzle,
-  GridIcon,
   BasicDataCard,
 } from "project-isaac-components";
-import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
 import SideBarPanel from "../../components/navigation/sidebar";
 
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
-
-export default function RegisterTwo({ view = "email" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
-  const router = useRouter();
-
+export default function Metrics() {
   return (
     <div>
       <WhiteNavBar />

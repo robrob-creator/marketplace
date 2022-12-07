@@ -3,23 +3,15 @@ import {
   CogIcon,
   UserAvatar,
   NavigationBar,
-  Button,
   Dropdown,
   Footer,
   DottedMenuIcon,
   SearchCircleIcon,
   CheckedIcon,
   AddCirlceIcon,
-  ArrowStrokeDown,
-  InputField,
 } from "project-isaac-components";
 
 import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
 import { CreateOrganizationForm } from "../../components/forms/createOrganizationForm";
 
 const input = (
@@ -91,13 +83,8 @@ const LeftElement = () => {
     </div>
   );
 };
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
 
-export default function RegisterTwo({ view = "profile" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
-  const router = useRouter();
+export default function RegisterTwo() {
   return (
     <div className="bg-gray-100">
       <NavigationBar

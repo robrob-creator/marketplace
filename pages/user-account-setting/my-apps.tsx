@@ -2,10 +2,7 @@ import { useRouter } from "next/router";
 import {
   BasicCard,
   Text,
-  SideBar,
   CogIcon,
-  GridIcon,
-  Puzzle,
   Footer,
   UserAvatar,
   Dropdown,
@@ -14,20 +11,9 @@ import {
   AddCirlceIcon,
   CheckedIcon,
 } from "project-isaac-components";
-import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
 import SideBarPanel from "../../components/navigation/sidebar";
 
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
-
-export default function RegisterTwo({ view = "email" }: sideNavProps) {
-  const [showForm, setShowForm] = useState(view);
+export default function MyApps() {
   const router = useRouter();
   const rightElement = (
     <div className="inline-flex gap-5">

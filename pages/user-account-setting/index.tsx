@@ -5,14 +5,13 @@ import {
   GridIcon,
   Puzzle,
   UserAvatar,
-  SideBar,
   NavigationBar,
   Button,
   Dropdown,
   Footer,
   DottedMenuIcon,
 } from "project-isaac-components";
-
+import SideBarPanel from "../../components/navigation/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
@@ -56,34 +55,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="flex">
         <div>
-          <SideBar
-            items={[
-              {
-                icon: <CogIcon />,
-                name: "Home",
-                notification: 28,
-              },
-              {
-                icon: <GridIcon />,
-                name: "Analytics",
-                notification: 5,
-              },
-              {
-                icon: <Puzzle />,
-                name: "My Apps",
-                notification: 12,
-                handleClick: () => {
-                  router.push("/user-account-setting/my-apps");
-                },
-              },
-              {
-                icon: <Puzzle />,
-                name: "Account Settings",
-                notification: 3,
-                className: "border-t-5",
-              },
-            ]}
-          />
+          <SideBarPanel type="dashboard" activeKey="home" />
         </div>
 
         {/* user account contents */}

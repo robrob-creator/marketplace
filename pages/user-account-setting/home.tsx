@@ -1,13 +1,9 @@
 import { Router, useRouter } from "next/router";
 import {
-  Line,
   CogIcon,
-  GridIcon,
   Puzzle,
   UserAvatar,
-  SideBar,
   NavigationBar,
-  Button,
   Dropdown,
   Footer,
   DottedMenuIcon,
@@ -23,16 +19,8 @@ import {
   AddCirlceIcon,
   List,
   Text,
-  ChartIcon,
-  HornIcon,
 } from "project-isaac-components";
 import SideBarPanel from "../../components/navigation/sidebar";
-import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
 
 interface LabelProps {
   label?: string;
@@ -114,12 +102,8 @@ const LeftElement = () => {
     </div>
   );
 };
-type sideNavProps = {
-  view: "profile" | "email" | "password";
-};
 
-export default function RegisterTwo({ view = "profile" }: sideNavProps) {
-  const router = useRouter();
+export default function Home() {
   return (
     <div className="bg-gray-100">
       <NavigationBar
