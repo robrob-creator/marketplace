@@ -1,6 +1,6 @@
 "use client";
 import React, { Dispatch, SetStateAction } from "react";
-import { SideBar, Puzzle, CogIcon } from "project-isaac-components";
+import { SideBar, Puzzle, CogIcon, ArrowLeft } from "project-isaac-components";
 import { useRouter } from "next/router";
 
 type Type = { type: "userSettings" | "dashboard" };
@@ -10,7 +10,7 @@ export default function SideBarPanel({ type }: Type) {
 
   const userSettings = [
     {
-      icon: <Puzzle />,
+      icon: <ArrowLeft />,
       name: "Back to Dashboard",
       notification: 34,
       handleClick: () => {
