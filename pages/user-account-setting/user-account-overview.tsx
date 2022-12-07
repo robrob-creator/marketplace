@@ -17,7 +17,7 @@ import {
   CheckedIcon,
   AddCirlceIcon,
 } from "project-isaac-components";
-
+import SideBarPanel from "../../components/navigation/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
@@ -120,41 +120,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="flex">
         <div className="sm:block hidden">
-          <SideBar
-            items={[
-              {
-                icon: <CogIcon />,
-                name: "Home",
-                notification: 28,
-                handleClick: () => {
-                  router.push("/user-account-setting/home");
-                },
-              },
-              {
-                icon: <GridIcon />,
-                name: "Analytics",
-                notification: 5,
-              },
-              {
-                icon: <Puzzle />,
-                name: "My Apps",
-                notification: 12,
-                handleClick: () => {
-                  router.push("/user-account-setting/my-apps");
-                },
-              },
-              {
-                icon: <Puzzle />,
-                name: "Account Settings",
-                isActive: true,
-                notification: 3,
-                className: "border-t-2",
-                handleClick: () => {
-                  router.push("/user-account-setting/user-account-overview");
-                },
-              },
-            ]}
-          />
+          <SideBarPanel type="userSettings" />
         </div>
 
         {/* contentd */}

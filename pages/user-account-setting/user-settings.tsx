@@ -1,10 +1,8 @@
 import { useRouter } from "next/router";
 import {
   CogIcon,
-  GridIcon,
   Puzzle,
   UserAvatar,
-  SideBar,
   NavigationBar,
   Button,
   Dropdown,
@@ -16,13 +14,8 @@ import {
   Text,
   InputField,
 } from "project-isaac-components";
-
 import { useState } from "react";
-import {
-  PasswordForm,
-  EmailForm,
-  ProfileForm,
-} from "../../components/forms/editProfile";
+import SideBarPanel from "../../components/navigation/sidebar";
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -111,35 +104,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="flex">
         <div className="sm:block hidden">
-          <SideBar
-            items={[
-              {
-                icon: <Puzzle />,
-                name: "Back to Dashboard",
-                notification: 34,
-                handleClick: () => {
-                  router.push("/user-account-setting/home");
-                },
-              },
-
-              {
-                icon: <CogIcon />,
-                name: "User Settings",
-                notification: 3,
-                className: "border-t-2",
-                isActive: true,
-              },
-              {
-                icon: <Puzzle />,
-                name: "Members",
-                notification: 3,
-                className: "border-t-2",
-                handleClick: () => {
-                  router.push("/user-account-setting/members");
-                },
-              },
-            ]}
-          />
+          <SideBarPanel />
         </div>
 
         {/* contents */}

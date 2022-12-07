@@ -26,7 +26,7 @@ import {
   ChartIcon,
   HornIcon,
 } from "project-isaac-components";
-
+import SideBarPanel from "../../components/navigation/sidebar";
 import { useState } from "react";
 import {
   PasswordForm,
@@ -129,38 +129,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="md:inline-flex">
         <div className="sm:block hidden">
-          <SideBar
-            items={[
-              {
-                icon: <CogIcon />,
-                name: "Home",
-                isActive: true,
-                notification: 28,
-              },
-              {
-                icon: <Puzzle />,
-                name: "Analytics",
-                notification: 5,
-              },
-              {
-                icon: <Puzzle />,
-                name: "My Apps",
-                notification: 12,
-                handleClick: () => {
-                  router.push("/user-account-setting/my-apps");
-                },
-              },
-              {
-                icon: <CogIcon />,
-                name: "Account Settings",
-                notification: 3,
-                className: "border-t-2",
-                handleClick: () => {
-                  router.push("/user-account-setting/user-account-overview");
-                },
-              },
-            ]}
-          />
+          <SideBarPanel type="dashboard" />
         </div>
 
         {/* home contents */}
