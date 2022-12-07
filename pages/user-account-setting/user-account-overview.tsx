@@ -24,6 +24,14 @@ import {
   EmailForm,
   ProfileForm,
 } from "../../components/forms/editProfile";
+
+interface LabelProps {
+  label?: string;
+}
+interface ValueProps {
+  value?: string;
+}
+
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -55,28 +63,30 @@ const rightElement = (
 const LeftElement = () => {
   const router = useRouter();
   return (
-    <div className="sm:inline-flex hidden gap-1 font-semibold">
+    <div className="sm:inline-flex hidden gap-1 font-semibold ">
       <UserAvatar className="w-8" />
       <Dropdown label="Grills092">
-        <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
-          <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600 ">
-              Personal account
-            </p>
-          </div>
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px] rounded-t-lg bg-white border border-[#D9D9D9]   ">
+          <p className="text-base font-medium text-[#5C5C5C] ">
+            Personal account
+          </p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px]  bg-white ">
           <div className="inline-flex justify-between items-center">
-            <div className="flex space-x-2.5 w-28 h-full">
+            <div className="flex space-x-2.5 w-28 h-full items-center">
               <UserAvatar />
-              <p className="text-base font-medium text-gray-600">Grills1031</p>
+              <p className="text-base font-medium text-[#5C5C5C]">Grills1031</p>
             </div>
-            <div className="flex space-x-5 items-center  w-1/6 h-6">
-              <CheckedIcon />
-              <CogIcon />
+            <div className="flex space-x-5 w-1/6 h-6">
+              <CheckedIcon width="24px" height="24px" />
+              <CogIcon width="24px" height="24px" />
             </div>
           </div>
-          <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600">Organization</p>
-          </div>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px]   bg-white ">
+          <p className="text-base font-medium text-gray-600">Organization</p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px] rounded-b-slg bg-white drop-shadow-2xl border-t border-[#D9D9D9] ">
           <div
             className="inline-flex gap-4 items-center cursor-pointer"
             onClick={() =>
@@ -168,7 +178,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 <CogIcon />
                 <p className="text-base font-semibold">Organization settings</p>
               </div>
-              <p className="sm:text-base text-sm text-gray-600">
+              <p className="sm:text-base text-sm text-gray-600 leading-5">
                 Change your organization name, company name, and more inside
                 user settings.
               </p>
@@ -185,40 +195,41 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             </div>
           </div>
 
-          <p className="mt-10 ml-5 text-base font-medium">
+          <p className="mt-[50px] ml-[24px] text-base font-medium">
             Account information
           </p>
 
-          <div className="mx-5 mt-5 p-3 bg-white rounded-lg ">
+          <div className="mx-5 mt-5 px-[27px] py-[15px] bg-white rounded-lg ">
             <List
               data={[
                 {
-                  label: "Organization name",
-                  value: "project moonshot",
+                  label: <ListItemLabel label="Organization name" />,
+                  value: <ListItemValue value="project moonshot" />,
                 },
                 {
-                  label: "Company name",
-                  value: "Project Moonshot Inc.",
+                  label: <ListItemLabel label="Company name" />,
+                  value: <ListItemValue value="Project Moonshot Inc." />,
                 },
                 {
-                  label: "Company size",
-                  value: "20-30 Employes",
+                  label: <ListItemLabel label="Company size" />,
+                  value: <ListItemValue value="20-30 Employes" />,
                 },
                 {
-                  label: "Country",
-                  value: "Philippines",
+                  label: <ListItemLabel label="Country" />,
+                  value: <ListItemValue value="Philippines" />,
                 },
                 {
-                  label: "Mobile number",
-                  value: "+63 936 5625 744",
+                  label: <ListItemLabel label="Mobile number" />,
+                  value: <ListItemValue value="+63 936 5625 744s" />,
                 },
                 {
-                  label: "Landline",
-                  value: "(088) 848 485",
+                  label: <ListItemLabel label="Landline" />,
+                  value: <ListItemValue value="(088) 848 485" />,
                 },
+
                 {
-                  label: "Members",
-                  value: "0",
+                  label: <ListItemLabel label="Members" />,
+                  value: <ListItemValue value="0" />,
                   rightIcon: <ArrowRightIcon color="#3D50BA" />,
                 },
               ]}
@@ -230,3 +241,10 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
     </div>
   );
 }
+
+const ListItemLabel = ({ label }: LabelProps) => {
+  return <p className="font-medium text-base leading-5"> {label} </p>;
+};
+const ListItemValue = ({ value }: ValueProps) => {
+  return <p className="font-medium text-base leading-5">{value}</p>;
+};
