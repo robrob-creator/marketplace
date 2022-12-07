@@ -3,13 +3,14 @@ import React, { Dispatch, SetStateAction } from "react";
 import { SideBar, Puzzle, CogIcon, ArrowLeft } from "project-isaac-components";
 import { useRouter } from "next/router";
 
-type Type = { type: "userSettings" | "dashboard" };
+type Type = { type: "userSettings" | "dashboard"; activeKey: string };
 
-export default function SideBarPanel({ type }: Type) {
+export default function SideBarPanel({ type, activeKey }: Type) {
   const router = useRouter();
 
   const userSettings = [
     {
+      key: "backtoDashboard",
       icon: <ArrowLeft />,
       name: "Back to Dashboard",
       notification: 34,
@@ -18,6 +19,7 @@ export default function SideBarPanel({ type }: Type) {
       },
     },
     {
+      key: "userSettings",
       icon: <CogIcon />,
       name: "User Settings",
       notification: 3,
@@ -25,6 +27,7 @@ export default function SideBarPanel({ type }: Type) {
       isActive: true,
     },
     {
+      key: "member",
       icon: <Puzzle />,
       name: "Members",
       notification: 3,
@@ -36,17 +39,20 @@ export default function SideBarPanel({ type }: Type) {
   ];
   const DashBoard = [
     {
+      key: "home",
       icon: <CogIcon />,
       name: "Home",
       isActive: true,
       notification: 28,
     },
     {
+      key: "analytics",
       icon: <Puzzle />,
       name: "Analytics",
       notification: 5,
     },
     {
+      key: "myapps",
       icon: <Puzzle />,
       name: "My Apps",
       notification: 12,
@@ -55,6 +61,7 @@ export default function SideBarPanel({ type }: Type) {
       },
     },
     {
+      key: "accountSettings",
       icon: <CogIcon />,
       name: "Account Settings",
       notification: 3,
@@ -64,5 +71,10 @@ export default function SideBarPanel({ type }: Type) {
       },
     },
   ];
-  return <SideBar items={type == "userSettings" ? userSettings : DashBoard} />;
+  return (
+    <SideBar
+      activeKey={activeKey}
+      items={type == "userSettings" ? userSettings : DashBoard}
+    />
+  );
 }

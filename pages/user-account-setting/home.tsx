@@ -129,7 +129,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="md:inline-flex">
         <div className="sm:block hidden">
-          <SideBarPanel type="dashboard" />
+          <SideBarPanel activeKey="home" type="dashboard" />
         </div>
 
         {/* home contents */}
