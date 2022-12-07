@@ -23,6 +23,8 @@ import {
   AddCirlceIcon,
   List,
   Text,
+  ChartIcon,
+  HornIcon,
 } from "project-isaac-components";
 
 import { useState } from "react";
@@ -136,7 +138,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 notification: 28,
               },
               {
-                icon: <GridIcon />,
+                icon: <Puzzle />,
                 name: "Analytics",
                 notification: 5,
               },
@@ -149,7 +151,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 },
               },
               {
-                icon: <Puzzle />,
+                icon: <CogIcon />,
                 name: "Account Settings",
                 notification: 3,
                 className: "border-t-2",
@@ -186,6 +188,8 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                 <List
                   data={[
                     {
+                      className:
+                        "inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Try out expo"
@@ -199,6 +203,8 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                       ),
                     },
                     {
+                      className:
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Explore APIs and guides with our docs"
@@ -212,6 +218,8 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                       ),
                     },
                     {
+                      className:
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Download our apps"
@@ -225,6 +233,8 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                       ),
                     },
                     {
+                      className:
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Learn about expo"
@@ -239,10 +249,6 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
                     },
                   ]}
                 />
-
-                {/* 
-              list item div */}
-                <div className="inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers h-28 px-[10px]"></div>
               </div>
             </div>
           </div>
@@ -276,7 +282,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
 const ListItemLabel = ({ label, icon }: LabelProps) => {
   return (
     <div className="flex items-center">
-      <div className="inline-flex items-center gap-3">
+      <div className="inline-flex items-center gap-6">
         <div className="flex items-center justify-center bg-[#D9D9D9] rounded-md h-[50px] w-[50px]">
           {icon}
         </div>

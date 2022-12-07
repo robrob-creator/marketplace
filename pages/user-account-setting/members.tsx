@@ -14,6 +14,8 @@ import {
   ArrowRightIcon,
   Text,
   List,
+  AddCirlceIcon,
+  CheckedIcon,
   GroupIcon,
 } from "project-isaac-components";
 
@@ -51,12 +53,49 @@ const rightElement = (
     <UserAvatar className="ml-5" />
   </div>
 );
-const leftElement = (
-  <div className="inline-flex gap-1 font-semibold">
-    <UserAvatar className="w-8" />
-    <Dropdown children label="Grills092" />
-  </div>
-);
+const LeftElement = () => {
+  const router = useRouter();
+  return (
+    <div className="sm:inline-flex hidden gap-1 font-semibold ">
+      <UserAvatar className="w-8" />
+      <Dropdown label="Grills092">
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px] rounded-t-lg bg-white border border-[#D9D9D9]   ">
+          <p className="text-base font-medium text-[#5C5C5C] ">
+            Personal account
+          </p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px]  bg-white ">
+          <div className="inline-flex justify-between items-center">
+            <div className="flex space-x-2.5 w-28 h-full items-center">
+              <UserAvatar />
+              <p className="text-base font-medium text-[#5C5C5C]">Grills1031</p>
+            </div>
+            <div className="flex space-x-5 w-1/6 h-6">
+              <CheckedIcon width="24px" height="24px" />
+              <CogIcon width="24px" height="24px" />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] h-[60px] p-[20px]   bg-white ">
+          <p className="text-base font-medium text-gray-600">Organization</p>
+        </div>
+        <div className="flex flex-col gap-8  w-[400px] p-[20px] rounded-b-slg bg-white drop-shadow-2xl border-t border-[#D9D9D9] ">
+          <div
+            className="inline-flex gap-4 items-center cursor-pointer"
+            onClick={() =>
+              router.push("/user-account-setting/create-organization")
+            }
+          >
+            <AddCirlceIcon />
+            <p className="text-base font-medium text-gray-600">
+              Create Organiztion
+            </p>
+          </div>
+        </div>
+      </Dropdown>
+    </div>
+  );
+};
 type sideNavProps = {
   view: "profile" | "email" | "password";
 };
@@ -70,10 +109,10 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       <NavigationBar
         className="bg-white border-b border-gray-300"
         rightElements={rightElement}
-        leftElements={leftElement}
+        leftElements={<LeftElement />}
       />
       <div className="flex">
-        <div>
+        <div className="sm:block hidden">
           <SideBar
             items={[
               {
@@ -111,17 +150,17 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
         <div className="flex flex-col w-full">
           <div className="flex  sm:py-8 sm:px-6  h-24 border-b bg-white border-gray-200">
             <div className="inline-flex space-x-5 items-center justify-start">
-              <div className="flex items-center justify-center w-10 h-full bg-gray-300 rounded-lg">
-                <CogIcon className="w-3/4 h-3/4 rounded-lg" />
+              <div className="flex items-center justify-center w-[40px] h-[40px] bg-gray-300 rounded-lg">
+                <GroupIcon width="30" height="30" />
               </div>
-              <p className="w-5/6 text-xl font-semibold">Member</p>
+              <p className="text-xl font-semibold">Member</p>
             </div>
           </div>
-          <div className="ml-5 mt-5 ">
-            <p className="text-base font-semibold">Pending invitations</p>
+          <div className="mt-[30px] mb-[20px] px-[27px] ">
+            <p className="text-base font-bold">Pending invitations</p>
           </div>
 
-          <div className="mt-10 mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-8 rounded-t-lg  border border-[#D9D9D9]">
+          <div className=" mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-8 rounded-t-lg  border border-[#D9D9D9]">
             <p className="text-xl font-bold">Pending Invitations</p>
           </div>
           <div className="mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-4  border border-[#D9D9D9]">
@@ -176,11 +215,11 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
               ]}
             />
           </div>
-          <div className="mt-10 mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-8 rounded-t-lg  border border-[#D9D9D9]">
+          <div className="mt-10 mx-5 inline-flex items-center justify-between px-5 sm:gap-0 gap-4 bg-white p-8 rounded-t-lg  border border-[#D9D9D9]">
             <p className="text-xl font-bold">Members</p>
             <Button text="Invite member" />
           </div>
-          <div className="mx-5 inline-flex space-x-96 items-center justify-between px-5 bg-white p-4  border border-[#D9D9D9]">
+          <div className="mx-5 inline-flex  items-center justify-between   bg-white px-[27px] py-[27px] border border-[#D9D9D9]">
             <List
               data={[
                 {
