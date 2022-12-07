@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NavigationPanel from "../components/navigation";
 import { Banner, Tabs, Footer, Card } from "project-isaac-components";
-
 import { useRouter } from "next/router";
 import Head from "next/head";
 export default function Homes() {
@@ -34,7 +33,7 @@ export default function Homes() {
       />
       {!authenticated && <Banner />}
       <Tabs />
-      <div className="flex flex-wrap mt-8 justify-center">
+      <div className="lg:grid lg:grid-cols-4  flex flex-wrap  ml-4 gap-4 lg:place-items-center justify-center mx-auto">
         {data.map((item, index) => {
           return (
             <div key="" onClick={() => redirect()}>
