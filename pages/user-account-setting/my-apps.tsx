@@ -12,73 +12,13 @@ import {
   CheckedIcon,
 } from "project-isaac-components";
 import SideBarPanel from "../../components/navigation/sidebar";
-
+import DashboardNav from "../../components/navigation/dasboardNav";
 export default function MyApps() {
   const router = useRouter();
-  const rightElement = (
-    <div className="inline-flex gap-5">
-      <input
-        className="w-[271px] h-[40px] border rounded-md p-3 border-[#D9D9D9]"
-        placeholder="Search"
-      />
-      <div className="my-auto cursor-pointer">
-        <DottedMenuIcon />
-      </div>
-      <UserAvatar className="ml-5" />
-    </div>
-  );
-  const LeftElement = () => {
-    const router = useRouter();
-    return (
-      <div className="inline-flex gap-1 font-semibold">
-        <UserAvatar className="w-8" />
-        <Dropdown label="Grills092">
-          <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
-            <div className="border-b border-[#D9D9D9] py-4">
-              <p className="text-base font-medium text-gray-600 ">
-                Personal account
-              </p>
-            </div>
-            <div className="inline-flex justify-between items-center">
-              <div className="flex space-x-2.5 w-28 h-full">
-                <UserAvatar />
-                <p className="text-base font-medium text-gray-600">
-                  Grills1031
-                </p>
-              </div>
-              <div className="flex space-x-5 items-center  w-1/6 h-6">
-                <CheckedIcon />
-                <CogIcon />
-              </div>
-            </div>
-            <div className="border-b border-[#D9D9D9] py-4">
-              <p className="text-base font-medium text-gray-600">
-                Organization
-              </p>
-            </div>
-            <div
-              className="inline-flex gap-4 items-center cursor-pointer"
-              onClick={() =>
-                router.push("/user-account-setting/create-organization")
-              }
-            >
-              <AddCirlceIcon />
-              <p className="text-base font-medium text-gray-600">
-                Create Organiztion
-              </p>
-            </div>
-          </div>
-        </Dropdown>
-      </div>
-    );
-  };
 
   return (
     <div>
-      <NavigationBar
-        rightElements={rightElement}
-        leftElements={<LeftElement />}
-      />
+      <DashboardNav />
       <div className="flex">
         <SideBarPanel activeKey="myApps" type="dashboard" />
         <div className="flex-auto bg-gray-100">
