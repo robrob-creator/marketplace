@@ -120,7 +120,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="flex">
         <div className="sm:block hidden">
-          <SideBarPanel type="userSettings" />
+          <SideBarPanel type="userSettings" activeKey="userSettings" />
         </div>
 
         {/* contentd */}
