@@ -106,7 +106,7 @@ const LeftElement = () => {
           >
             <AddCirlceIcon />
             <p className="text-base font-medium text-gray-600">
-              Create Organiztion
+              Create Organization
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
         rightElements={rightElement}
         leftElements={<LeftElement />}
       />
-      <div className="md:inline-flex">
+      <div className="sm:inline-flex">
         <div className="sm:block hidden">
           <SideBarPanel activeKey="home" type="dashboard" />
         </div>
@@ -260,7 +260,6 @@ const ListItemLabel = ({ label, icon }: LabelProps) => {
           color="#687782"
           className="text-base font-medium text-gray-500"
         />
-        {/* <p className="text-base font-medium text-gray-500">{label}</p> */}
       </div>
     </div>
   );

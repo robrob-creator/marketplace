@@ -15,6 +15,7 @@ import {
   InputField,
 } from "project-isaac-components";
 import { useState } from "react";
+import { AccountInformationForm } from "../../components/forms/accountInformationForm";
 import SideBarPanel from "../../components/navigation/sidebar";
 const input = (
   <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
@@ -104,7 +105,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
       />
       <div className="flex">
         <div className="sm:block hidden">
-          <SideBarPanel />
+          <SideBarPanel type="userSettings" activeKey="userSettings" />
         </div>
 
         {/* contents */}
@@ -139,74 +140,8 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             Account information
           </p>
 
-          <div className=" bg-white rounded-t-lg mx-5 mt-5 p-8 ">
-            <div className="flex flex-1">
-              <div className="inline-flex flex-col justify-start">
-                <p className="text-base font-semibold">Organization name</p>
-                <p className="font-normal">
-                  The organization name may only contain alphanumeric
-                  characters, underscores, and single hyphens, and cannot begin
-                  or end with a hyphen.
-                </p>
-                <InputField
-                  className="sm:w-[453px] mt-5"
-                  size="sm"
-                  onChange={() => {}}
-                  placeholder="Organization name"
-                />
-                <p className="text-base font-semibold mt-[50px]">
-                  Organization info
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-1">
-              <InputField
-                className="w-[453px] mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Company name"
-              />
-              <InputField
-                className="w-[453px] ml-5 mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Mobile number"
-              />
-            </div>
-            <div className="flex flex-1">
-              <InputField
-                className="w-[453px] mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Landline"
-              />
-              <InputField
-                className="w-[453px] ml-5 mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Country"
-              />
-            </div>
-            <div className="flex flex-1">
-              <InputField
-                className="w-[453px] mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Language "
-              />
-              <InputField
-                className="w-[453px] ml-5 mt-5"
-                size="sm"
-                onChange={() => {}}
-                placeholder="Company size"
-              />
-            </div>
-          </div>
-
-          <div className="inline-flex justify-end bg-white rounded-b-lg mx-5 p-8 border-t ">
-            <Button text="Save" className="pr-[26px] pb-[37px]" />
-          </div>
-          <div className="inline-flex items-center sm:justify-between px-5 bg-white mt-10 mx-5 p-8 rounded-lg">
+          <AccountInformationForm />
+          <div className="inline-flex items-center sm:justify-between px-5 mt-10 mx-5 p-8 rounded-lg bg-white">
             <div className="inline-flex flex-col space-y-2.5 items-start justify-center">
               <div className="inline-flex space-x-1 items-center justify-start">
                 <Puzzle />
