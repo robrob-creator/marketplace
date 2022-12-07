@@ -20,6 +20,7 @@ import {
   EmailForm,
   ProfileForm,
 } from "../../components/forms/editProfile";
+import SideBarPanel from "../../components/navigation/sidebar";
 
 type sideNavProps = {
   view: "profile" | "email" | "password";
@@ -93,41 +94,7 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
         leftElements={<LeftElement />}
       />
       <div className="flex">
-        <SideBar
-          items={[
-            {
-              icon: <CogIcon />,
-              name: "Home",
-              notification: 28,
-              handleClick: () => {
-                router.push("/user-account-setting/home");
-              },
-            },
-            {
-              icon: <GridIcon />,
-              name: "Analytics",
-              notification: 5,
-            },
-            {
-              icon: <Puzzle />,
-              name: "My Apps",
-              notification: 12,
-              handleClick: () => {
-                router.push("/user-account-setting/my-apps");
-              },
-            },
-            {
-              icon: <Puzzle />,
-              name: "Account Settings",
-              isActive: true,
-              notification: 3,
-              className: "border-t-2",
-              handleClick: () => {
-                router.push("/user-account-setting/user-account-overview");
-              },
-            },
-          ]}
-        />
+        <SideBarPanel activeKey="myApps" type="dashboard" />
         <div className="flex-auto bg-gray-100">
           <div
             className="flex items-center justify-start  pr-96 pt-5 pb-4 bg-white border border-gray-200 w-full"

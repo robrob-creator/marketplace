@@ -27,7 +27,7 @@ export default function SideBarPanel({ type, activeKey }: Type) {
       isActive: true,
     },
     {
-      key: "member",
+      key: "members",
       icon: <Puzzle />,
       name: "Members",
       notification: 3,
@@ -44,6 +44,9 @@ export default function SideBarPanel({ type, activeKey }: Type) {
       name: "Home",
       isActive: true,
       notification: 28,
+      handleClick: () => {
+        router.push("/user-account-setting/home");
+      },
     },
     {
       key: "analytics",
@@ -52,7 +55,7 @@ export default function SideBarPanel({ type, activeKey }: Type) {
       notification: 5,
     },
     {
-      key: "myapps",
+      key: "myApps",
       icon: <Puzzle />,
       name: "My Apps",
       notification: 12,
