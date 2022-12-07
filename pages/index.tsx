@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavigationPanel from "../components/navigation";
+import NavigationPanel from "../components/navigation/navigation";
 import { Banner, Tabs, Footer, Card } from "project-isaac-components";
 import { useRouter } from "next/router";
 import Head from "next/head";
