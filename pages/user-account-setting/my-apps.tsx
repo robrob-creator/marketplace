@@ -112,7 +112,6 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
               icon: <Puzzle />,
               name: "My Apps",
               notification: 12,
-              isActive: true,
               handleClick: () => {
                 router.push("/user-account-setting/my-apps");
               },
@@ -120,7 +119,9 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
             {
               icon: <Puzzle />,
               name: "Account Settings",
+              isActive: true,
               notification: 3,
+              className: "border-t-2",
               handleClick: () => {
                 router.push("/user-account-setting/user-account-overview");
               },
@@ -139,12 +140,12 @@ export default function RegisterTwo({ view = "email" }: sideNavProps) {
           </div> */}
           </div>
 
-          <div className="sm:py-8 sm:px-16 sm:mx-0 mx-8 ">
+          <div className="sm:py-8 sm:px-16 sm:mx-0 mx-8  md:w-[1170px]">
             <div className="inline-flex flex-col space-y-11 items-start justify-start w-full ">
               <Text color="black" fontStyle="medium">
                 New installed
               </Text>
-              <div className="flex flex-col space-y-12 items-start justify-start  bg ">
+              <div className="flex flex-col space-y-12 items-start justify-start ">
                 <div
                   className="flex flex-wrap gap-14 items-start justify-start "
                   onClick={() => router.push("/user-account-setting/metrics")}
