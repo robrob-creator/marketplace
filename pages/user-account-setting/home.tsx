@@ -178,7 +178,7 @@ export default function RegisterTwo({ view = "profile" }: sideNavProps) {
             />
           </div>
 
-          <div className="flex xl:w-[1100px] flex-col  px-[50px] py-[30px] bg-white border rounded-2xl border-gray-200 mt-10">
+          <div className="flex flex-col  px-[50px] py-[30px] bg-white border rounded-2xl border-gray-200 mt-10">
             <div className="flex flex-col space-y-8 items-start justify-start">
               <div className="inline-flex space-x-2.5 items-center justify-start">
                 <BulbIcon width="40" height="40" />
