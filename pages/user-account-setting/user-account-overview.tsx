@@ -8,8 +8,8 @@ import {
   Text,
   List,
 } from "project-isaac-components";
-import SideBarPanel from "../../components/navigation/sidebar";
-import DashboardNav from "../../components/navigation/dasboardNav";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
 interface LabelProps {
   label?: string;
 }

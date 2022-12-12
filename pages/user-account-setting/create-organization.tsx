@@ -1,6 +1,6 @@
 import { Footer } from "project-isaac-components";
-import DashboardNav from "../../components/navigation/dasboardNav";
-import { CreateOrganizationForm } from "../../components/forms/createOrganizationForm";
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
+import { CreateOrganizationForm } from "../../components/modules/forms/createOrganizationForm";
 
 export default function RegisterTwo() {
   return (

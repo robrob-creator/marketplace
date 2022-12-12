@@ -7,8 +7,8 @@ import {
   List,
   GroupIcon,
 } from "project-isaac-components";
-import DashboardNav from "../../components/navigation/dasboardNav";
-import SideBarPanel from "../../components/navigation/sidebar";
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
 
 export default function Members() {
   return (

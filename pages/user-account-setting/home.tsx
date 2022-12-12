@@ -12,17 +12,9 @@ import {
   List,
   Text,
 } from "project-isaac-components";
-import DashboardNav from "../../components/navigation/dasboardNav";
-import SideBarPanel from "../../components/navigation/sidebar";
-
-interface LabelProps {
-  label?: string;
-  icon?: React.ReactNode;
-}
-interface ValueProps {
-  label?: string;
-  icon?: React.ReactNode;
-}
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
+import { ListItemValue, ListItemLabel } from "../../components/elements/list";
 
 export default function Home() {
   return (
@@ -36,7 +28,7 @@ export default function Home() {
         {/* home contents */}
 
         <div className="flex flex-col sm:py-8 py-12 sm:px-16">
-          <div className="inline-flex  space-x-5 sm:justify-start justify-center items-center ">
+          <div className="inline-flex  space-x-5 sm:justify-start justify-center items-center">
             <div className="bg-gray-300 rounded-lg">
               <WaveIcon />
             </div>
@@ -59,7 +51,7 @@ export default function Home() {
                   data={[
                     {
                       className:
-                        "inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointers px-[10px]",
+                        "inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointer px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Try out expo"
@@ -74,7 +66,7 @@ export default function Home() {
                     },
                     {
                       className:
-                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Explore APIs and guides with our docs"
@@ -89,7 +81,7 @@ export default function Home() {
                     },
                     {
                       className:
-                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Download our apps"
@@ -104,7 +96,7 @@ export default function Home() {
                     },
                     {
                       className:
-                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointers px-[10px]",
+                        "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
                       label: (
                         <ListItemLabel
                           label="Learn about expo"
@@ -131,27 +123,6 @@ export default function Home() {
     </div>
   );
 }
-
-const ListItemLabel = ({ label, icon }: LabelProps) => {
-  return (
-    <div className="flex items-center">
-      <div className="inline-flex items-center gap-6">
-        <div className="flex items-center justify-center bg-[#D9D9D9] rounded-md h-[50px] w-[50px]">
-          {icon}
-        </div>
-        <Text
-          text={label}
-          color="#687782"
-          className="text-base font-medium text-gray-500"
-        />
-      </div>
-    </div>
-  );
-};
-
-const ListItemValue = ({ label, icon }: ValueProps) => {
-  return <div className="px-3">{icon}</div>;
-};
 
 const JoinUsSection = () => {
   return (

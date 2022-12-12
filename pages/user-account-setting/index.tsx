@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import {
   Line,
   CogIcon,
@@ -11,13 +12,12 @@ import {
   Footer,
   DottedMenuIcon,
 } from "project-isaac-components";
-import SideBarPanel from "../../components/navigation/sidebar";
-import { useState } from "react";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
 import {
   PasswordForm,
   EmailForm,
   ProfileForm,
-} from "../../components/forms/editProfile";
+} from "../../components/modules/forms/editProfile";
 
 const rightElement = (
   <div className="inline-flex gap-5">

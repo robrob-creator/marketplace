@@ -6,9 +6,9 @@ import {
   Footer,
   Text,
 } from "project-isaac-components";
-import { AccountInformationForm } from "../../components/forms/accountInformationForm";
-import SideBarPanel from "../../components/navigation/sidebar";
-import DashboardNav from "../../components/navigation/dasboardNav";
+import { AccountInformationForm } from "../../components/modules/forms/accountInformationForm";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
 
 export default function UserSettings() {
   return (
@@ -20,8 +20,8 @@ export default function UserSettings() {
         </div>
 
         {/* contents */}
-        <div className="inline-flex flex-col  bg-gray-100 box-border">
-          <div className="inline-flex items-center justify-start h-[80px] bg-white w-full">
+        <div className="inline-flex flex-col  bg-gray-100 box-border w-full">
+          <div className="inline-flex items-center justify-start h-[80px] bg-white">
             <div className="flex items-center justify-center w-[40px] h-[40px]  bg-gray-300 rounded-lg ml-10">
               <CogIcon width="30" height="30" />
             </div>
