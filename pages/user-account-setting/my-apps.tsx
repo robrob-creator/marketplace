@@ -1,16 +1,5 @@
 import { useRouter } from "next/router";
-import {
-  BasicCard,
-  Text,
-  CogIcon,
-  Footer,
-  UserAvatar,
-  Dropdown,
-  NavigationBar,
-  DottedMenuIcon,
-  AddCirlceIcon,
-  CheckedIcon,
-} from "project-isaac-components";
+import { BasicCard, Text, Footer } from "project-isaac-components";
 import SideBarPanel from "../../components/modules/navigation/sidebar";
 import DashboardNav from "../../components/modules/navigation/dasboardNav";
 export default function MyApps() {

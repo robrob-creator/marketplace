@@ -4,20 +4,7 @@ import { useRouter } from "next/router";
 
 export default function HomePage() {
   const router = useRouter();
-  const [data, setData] = useState([
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-  ]);
+  const data = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"];
   const redirect = () => {
     router.push("/product");
   };
