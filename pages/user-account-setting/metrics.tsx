@@ -8,7 +8,7 @@ import {
   InformationCard,
   BasicDataCard,
 } from "project-isaac-components";
-import SideBarPanel from "../../components/modules/navigation/sidebar";
+import SideBarPanel from "../../app/components/modules/navigation/sidebar";
 
 export default function Metrics() {
   return (
