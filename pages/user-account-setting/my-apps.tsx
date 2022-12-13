@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { BasicCard, Text, Footer } from "project-isaac-components";
-import SideBarPanel from "../../app/components/modules/navigation/sidebar";
-import DashboardNav from "../../app/components/modules/navigation/dasboardNav";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
+import DashboardNav from "../../components/modules/navigation/dasboardNav";
 export default function MyApps() {
   const router = useRouter();
 

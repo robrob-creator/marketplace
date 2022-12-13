@@ -12,12 +12,12 @@ import {
   Footer,
   DottedMenuIcon,
 } from "project-isaac-components";
-import SideBarPanel from "../../app/components/modules/navigation/sidebar";
+import SideBarPanel from "../../components/modules/navigation/sidebar";
 import {
   PasswordForm,
   EmailForm,
   ProfileForm,
-} from "../../app/components/modules/forms/editProfile";
+} from "../../components/modules/forms/editProfile";
 
 const rightElement = (
   <div className="inline-flex gap-5">

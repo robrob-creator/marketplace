@@ -1,5 +1,5 @@
-import DashboardLayout from "../../app/components/layouts/dashboard";
-import UserSettingsPage from "../../app/components/templates/dashboard/userSettingsPage";
+import DashboardLayout from "../../components/layouts/dashboard";
+import UserSettingsPage from "../../components/templates/dashboard/userSettingsPage";
 
 export default function UserSettings() {
   return (

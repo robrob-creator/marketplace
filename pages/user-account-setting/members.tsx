@@ -1,5 +1,5 @@
-import DashboardLayout from "../../app/components/layouts/dashboard";
-import MembersPage from "../../app/components/templates/dashboard/membersPage";
+import DashboardLayout from "../../components/layouts/dashboard";
+import MembersPage from "../../components/templates/dashboard/membersPage";
 
 export default function Members() {
   return (
