@@ -7,22 +7,15 @@ type Props = {
   catalog: Catalog;
 };
 export default function CatalogCard({ catalog }: Props) {
-  const router = useRouter();
-  const redirect = () => {
-    router.push("/product");
-  };
-
   return (
-    <div className="" onClick={() => redirect()}>
-      <Card
-        layout="vertical"
-        title={catalog?.name}
-        className="mb-4"
-        imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
-        subtitle={<Subtitle catalog={catalog} />}
-        content={<Content catalog={catalog} />}
-      />
-    </div>
+    <Card
+      layout="vertical"
+      title={catalog?.name}
+      className="mb-4"
+      imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
+      subtitle={<Subtitle catalog={catalog} />}
+      content={<Content catalog={catalog} />}
+    />
   );
 }
 const Content = ({ catalog }: Props) => {
