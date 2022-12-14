@@ -1,24 +1,32 @@
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import {
-  ArrowLeft,
   ProductBanner,
   InfoBanner,
   DescriptionCard,
   WhatsNewCard,
-  InformationCard,
   SimilarCard,
   MoreCard,
   Footer,
 } from "project-isaac-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getCatalogById } from "../../services/catalog";
+import { Catalog } from "../../types";
+type Props = {
+  catalogDetails: Catalog | undefined;
+};
 
-export default function Installation() {
-  const router = useRouter();
+export default function Installation({ catalogDetails }: Props) {
+  const [catalog, setCatalog] = useState<Catalog>();
+
+  useEffect(() => {
+    setCatalog(catalogDetails);
+  }, [catalogDetails]);
   return (
     <div>
-      <BreadCrumb />
+      <BreadCrumb catalogDetails={catalog} />
       <ProductBanner
-        title="POS"
+        title={catalog?.name}
         description="This is a product description. This is a product description"
         extra={
           <div className="flex flex-wrap  w-26">
@@ -28,7 +36,7 @@ export default function Installation() {
               style={{ left: 61 }}
             >
               <p className="text-xs font-semibold leading-snug text-center text-gray-50">
-                ₱ 2,000.00
+                ₱ {catalog?.price}
               </p>
             </div>
             <div
@@ -52,7 +60,7 @@ export default function Installation() {
     </div>
   );
 }
-const BreadCrumb = () => {
+const BreadCrumb = ({ catalogDetails }: Props) => {
   const router = useRouter();
   return (
     <div className="flex justify-between  py-4 w-full">
@@ -72,15 +80,34 @@ const BreadCrumb = () => {
         </svg>
       </div>
       <p className="text-base  justify-center font-semibold leading-snug text-center text-gray-700">
-        Point of Sale
+        {catalogDetails?.name}
       </p>
       <div className="px-4">
         <div className="inline-flex items-center justify-center  h-9 px-4 py-2 bg-blue-700 rounded-full">
           <p className="text-xs font-semibold leading-snug text-center text-gray-50">
-            ₱ 2,000.00
+            ₱ {catalogDetails?.price}
           </p>
         </div>
       </div>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  try {
+    let id = context.query.id;
+    const res = await getCatalogById(`${id}`);
+    const catalogDetails = res;
+
+    return {
+      props: {
+        catalogDetails,
+      },
+    };
+  } catch (err) {
+    //catch error incase of fetching errors
+    return {
+      props: {},
+    };
+  }
 };
