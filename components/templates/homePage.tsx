@@ -3,14 +3,15 @@ import { Card } from "project-isaac-components";
 import { useRouter } from "next/router";
 import { Catalog } from "../../types";
 import CatalogCard from "../modules/cards/catalogCard";
+import path from "path";
 
 type HomePageProps = {
   catalog: Catalog[];
 };
 export default function HomePage({ catalog }: HomePageProps) {
   const router = useRouter();
-  const redirect = () => {
-    router.push("/product");
+  const redirect = (id: string) => {
+    router.push({ pathname: "/product/[id]", query: { id: id } });
   };
 
   return (
@@ -20,7 +21,7 @@ export default function HomePage({ catalog }: HomePageProps) {
         {catalog &&
           catalog.map((item, index) => {
             return (
-              <div key="" onClick={() => redirect()}>
+              <div key={index} onClick={() => redirect(item.id)}>
                 <CatalogCard catalog={item} />
               </div>
             );

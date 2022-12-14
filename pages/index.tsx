@@ -4,17 +4,17 @@ import DefaultLayout from "../components/layouts/default";
 import HomePage from "../components/templates/homePage";
 import { getCatalog } from "../services/catalog";
 import { Catalog } from "../types";
-
-export default function Homes() {
+import { GetServerSideProps } from "next";
+type Props = {
+  catalogList: Catalog[];
+};
+export default function Homes({ catalogList }: Props) {
   const [catalog, setCatalog] = useState<Catalog[]>([]);
-  const fetchCatalog = async () => {
-    let res = await getCatalog();
-    setCatalog(res);
-  };
 
   useEffect(() => {
-    fetchCatalog();
-  });
+    setCatalog(catalogList);
+  }, [catalogList]);
+
   return (
     <div>
       <Head>Marketplace</Head>
@@ -24,3 +24,14 @@ export default function Homes() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const res = await getCatalog();
+  const catalogList = res;
+
+  return {
+    props: {
+      catalogList,
+    },
+  };
+};
