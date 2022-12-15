@@ -7,6 +7,7 @@ import {
   DescriptionCard,
   WhatsNewCard,
   SimilarCard,
+  InfoBanner,
   MoreCard,
   List,
   Footer,
@@ -88,6 +89,12 @@ export default function Installation({ catalogDetails }: Props) {
       </div>
       <DescriptionCard />
       <WhatsNewCard />
+      <InfoBanner />
+      <DescriptionCard
+        description={catalog?.description}
+        developer={catalog?.developer}
+      />
+      <WhatsNewCard latestUpdates={catalog?.latestUpdates} />
       {/*<InformationCard />*/}
       <SimilarCard />
       <MoreCard />
