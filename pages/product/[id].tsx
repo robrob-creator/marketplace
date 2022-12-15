@@ -51,8 +51,11 @@ export default function Installation({ catalogDetails }: Props) {
         }
       />
       <InfoBanner />
-      <DescriptionCard />
-      <WhatsNewCard />
+      <DescriptionCard
+        description={catalog?.description}
+        developer={catalog?.developer}
+      />
+      <WhatsNewCard latestUpdates={catalog?.latestUpdates} />
       {/*<InformationCard />*/}
       <SimilarCard />
       <MoreCard />
