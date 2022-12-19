@@ -94,8 +94,8 @@ export default function Installation({ catalogDetails }: Props) {
       />
       <WhatsNewCard latestUpdates={catalog?.latestUpdates} />
       {/*<InformationCard />*/}
-      <SimilarCard />
-      <MoreCard />
+      {/* <SimilarCard />
+      <MoreCard />*/}
       <Footer />
     </div>
   );
