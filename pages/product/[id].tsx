@@ -70,19 +70,19 @@ export default function Installation({ catalogDetails }: Props) {
           layout="horizontal"
           data={[
             {
-              content: <Ratings />,
+              content: <Ratings catalog={catalog} />,
             },
             {
-              content: <Chart />,
+              content: <Chart catalog={catalog} />,
             },
             {
-              content: <Developer />,
+              content: <Developer catalog={catalog} />,
             },
             {
-              content: <Language />,
+              content: <Language catalog={catalog} />,
             },
             {
-              content: <Size />,
+              content: <Size catalog={catalog} />,
             },
           ]}
         />
