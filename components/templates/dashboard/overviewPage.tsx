@@ -57,30 +57,36 @@ const OverviewPage = () => {
         Account information
       </p>
 
-      <div className="mx-5 mt-5 px-[27px] py-[15px] bg-white rounded-lg ">
+      <div className="mx-5 mt-5  py-[15px] bg-white rounded-lg ">
         <List
           data={[
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Organization name" />,
               value: <ListItemValue value="project moonshot" />,
             },
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Company name" />,
               value: <ListItemValue value="Project Moonshot Inc." />,
             },
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Company size" />,
               value: <ListItemValue value="20-30 Employes" />,
             },
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Country" />,
               value: <ListItemValue value="Philippines" />,
             },
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Mobile number" />,
               value: <ListItemValue value="+63 936 5625 744s" />,
             },
             {
+              className: "border-b border-[#D9D9D9]",
               label: <ListItemLabel label="Landline" />,
               value: <ListItemValue value="(088) 848 485" />,
             },
