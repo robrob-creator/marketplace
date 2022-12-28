@@ -12,7 +12,7 @@ const UserSettingsPage = () => {
         <p className="w-5/6 text-xl font-semibold ml-[20px]">User settings</p>
       </div>
 
-      <div className="inline-flex  items-center justify-between px-5 bg-white mt-10 mx-5 p-8 rounded-lg h-[125px]  ">
+      <div className="inline-flex  items-center justify-between px-5 bg-white mt-10 mx-5 p-8 rounded-lg sm:h-[125px]  ">
         <div className="inline-flex flex-col gap-[10px] items-start justify-center">
           <div className="inline-flex space-x-1 items-center justify-start">
             <CogIcon width="30" height="30" />

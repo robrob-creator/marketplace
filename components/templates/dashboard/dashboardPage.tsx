@@ -16,17 +16,27 @@ import DashboardNav from "../../modules/navigation/dasboardNav";
 import SideBarPanel from "../../modules/navigation/sidebar";
 import { ListItemValue, ListItemLabel } from "../../elements/list";
 import DashboardLayout from "../../layouts/dashboard";
+import { useEffect } from "react";
 
 export default function DashboardHomePage() {
+  const router = useRouter();
+  useEffect(() => {
+    router.beforePopState((state) => {
+      state.options.scroll = false;
+
+      return true;
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col sm:py-8 py-12 sm:px-16">
+    <div className="flex flex-col sm:py-8 py-12 sm:px-10 desktop:mx-auto mx-0 desktop:w-[1200px]">
       <div className="inline-flex  space-x-5 sm:justify-start justify-center items-center">
         <div className="bg-gray-300 rounded-lg">
           <WaveIcon />
         </div>
 
         <Text
-          className="font-semibold text-xl"
+          className="font-semibold"
           text="Hey Grills, Welcome to ISAAC!"
           color="black"
         />
@@ -43,7 +53,7 @@ export default function DashboardHomePage() {
               data={[
                 {
                   className:
-                    "inline-flex  items-center justify-between  rounded-md  bg-gray-100 cursor-pointer px-[10px]",
+                    "inline-flex items-center justify-between  rounded-md  bg-gray-100 cursor-pointer px-[10px]",
                   label: (
                     <ListItemLabel
                       label="Try out expo"
@@ -58,7 +68,7 @@ export default function DashboardHomePage() {
                 },
                 {
                   className:
-                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
+                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px] sm:mt-0 mt-[50px]",
                   label: (
                     <ListItemLabel
                       label="Explore APIs and guides with our docs"
@@ -73,7 +83,7 @@ export default function DashboardHomePage() {
                 },
                 {
                   className:
-                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
+                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px] sm:mt-0 mt-[50px]",
                   label: (
                     <ListItemLabel
                       label="Download our apps"
@@ -88,7 +98,7 @@ export default function DashboardHomePage() {
                 },
                 {
                   className:
-                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px]",
+                    "inline-flex  items-center justify-between  rounded-md hover:bg-gray-100 cursor-pointer px-[10px] sm:mt-0 mt-[50px]",
                   label: (
                     <ListItemLabel
                       label="Learn about expo"
