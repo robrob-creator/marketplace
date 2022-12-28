@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card } from "project-isaac-components";
 import { useRouter } from "next/router";
 import { Catalog } from "../../types";
@@ -8,11 +8,20 @@ import path from "path";
 type HomePageProps = {
   catalog: Catalog[];
 };
+
 export default function HomePage({ catalog }: HomePageProps) {
   const router = useRouter();
+
   const redirect = (id: string) => {
     router.push({ pathname: "/product/[id]", query: { id: id } });
   };
+  useEffect(() => {
+    router.beforePopState((state) => {
+      state.options.scroll = false;
+
+      return true;
+    });
+  }, []);
 
   return (
     <div>

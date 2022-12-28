@@ -7,6 +7,7 @@ import {
   DescriptionCard,
   WhatsNewCard,
   SimilarCard,
+  InfoBanner,
   MoreCard,
   List,
   Footer,
@@ -69,28 +70,32 @@ export default function Installation({ catalogDetails }: Props) {
           layout="horizontal"
           data={[
             {
-              content: <Ratings />,
+              content: <Ratings catalog={catalog} />,
             },
             {
-              content: <Chart />,
+              content: <Chart catalog={catalog} />,
             },
             {
-              content: <Developer />,
+              content: <Developer catalog={catalog} />,
             },
             {
-              content: <Language />,
+              content: <Language catalog={catalog} />,
             },
             {
-              content: <Size />,
+              content: <Size catalog={catalog} />,
             },
           ]}
         />
       </div>
-      <DescriptionCard />
-      <WhatsNewCard />
+
+      <DescriptionCard
+        description={catalog?.description}
+        developer={catalog?.developer}
+      />
+      <WhatsNewCard latestUpdates={catalog?.latestUpdates} />
       {/*<InformationCard />*/}
-      <SimilarCard />
-      <MoreCard />
+      {/* <SimilarCard />
+      <MoreCard />*/}
       <Footer />
     </div>
   );

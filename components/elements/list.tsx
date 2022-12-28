@@ -1,5 +1,5 @@
 import { Text, StarFilled, StarOutlined } from "project-isaac-components";
-
+import { Catalog } from "../../types/index";
 interface LabelProps {
   label?: string;
   icon?: React.ReactNode;
@@ -10,6 +10,9 @@ interface ValueProps {
   icon?: React.ReactNode;
 }
 
+interface CatalogProps {
+  catalog: Catalog | undefined;
+}
 export const ListItemLabel = ({ label, icon }: LabelProps) => {
   return (
     <div className="flex items-center">
@@ -32,7 +35,7 @@ export const ListItemValue = ({ label, icon }: ValueProps) => {
 };
 /** Product detail list elements */
 
-export const Language = () => {
+export const Language = ({ catalog }: CatalogProps) => {
   return (
     <div className="px-4 inline-flex flex-col  space-y-96 sm:px-24 border-r-2 border-gray-400">
       <div className="relative h-24" style={{ width: "81px" }}>
@@ -43,7 +46,7 @@ export const Language = () => {
           className="absolute w-full text-2xl sm:text-3xl font-semibold leading-10 text-gray-700"
           style={{ left: " 30px", top: "35px" }}
         >
-          EN
+          {catalog?.language?.slice(0, 2).toUpperCase()}
         </p>
         <p className="absolute right-0 bottom-0  w-16 text-center mt-2 text-xs leading-10 text-gray-700">
           +5 more
@@ -53,7 +56,7 @@ export const Language = () => {
   );
 };
 
-export const Chart = () => {
+export const Chart = ({ catalog }: CatalogProps) => {
   return (
     <div className="px-4 inline-flex w-64 sm:px-36  flex-col h-24  space-y-96 border-r-2 border-gray-400">
       <div className="inline-flex flex-col items-center justify-center sm:w- sm:h-24">
@@ -61,16 +64,16 @@ export const Chart = () => {
           Chart
         </p>
         <p className=" text-2xl sm:text-3xl font-semibold leading-10 text-center text-gray-700">
-          No. 5
+          No .{catalog?.standing}
         </p>
         <div className="inline-flex space-x-0.5 items-start justify-start">
-          <p className="text-center text-xs text-gray-700">Point of sale</p>
+          <p className="text-center text-xs text-gray-700">{catalog?.name}</p>
         </div>
       </div>
     </div>
   );
 };
-export const Size = () => {
+export const Size = ({ catalog }: CatalogProps) => {
   return (
     <div className="px-4 inline-flex w-36 sm:px-24 h-24 flex-col  space-y-96">
       <div className="relative h-24" style={{ width: "81px" }}>
@@ -81,7 +84,7 @@ export const Size = () => {
           className="absolute w-full text-2xl sm:text-3xl font-semibold leading-10 text-gray-700"
           style={{ left: " 9px", top: "35px" }}
         >
-          235.5
+          {catalog?.size}
         </p>
         <p className="absolute right-0 bottom-0 w-16 text-center mt-2 text-xs leading-10 text-gray-700">
           MB
@@ -90,7 +93,7 @@ export const Size = () => {
     </div>
   );
 };
-export const Developer = () => {
+export const Developer = ({ catalog }: CatalogProps) => {
   return (
     <div className="px-4 sm:px-24 border-r-2 border-gray-400 h-24 flex justify-center space-y-96">
       <div className="flex justify-center relative h-24 w-20">
@@ -115,14 +118,14 @@ export const Developer = () => {
           />
         </svg>
 
-        <p className="absolute bottom-0 text-center mt-2 text-xs leading-10 text-gray-700">
-          Point of sale
+        <p className="absolute bottom-0 text-center mt-2 text-xs leading-10 text-gray-700 w-20  truncate">
+          {catalog?.developer}
         </p>
       </div>
     </div>
   );
 };
-export const Ratings = () => {
+export const Ratings = ({ catalog }: CatalogProps) => {
   return (
     <div className="inline-flex justify-items-center px-4 sm:px-24 flex-col h-24 sm:space-y-96 border-r-2 border-gray-400">
       <div className="inline-flex flex-col items-center justify-end sm:w-16 sm:h-24">
@@ -130,7 +133,7 @@ export const Ratings = () => {
           Ratings
         </p>
         <p className="text-2xl sm:text-3xl font-semibold leading-10 text-center text-gray-700">
-          4.5
+          {catalog?.rating}
         </p>
         <div className="inline-flex space-x-0.5 items-start justify-start">
           <StarFilled />
