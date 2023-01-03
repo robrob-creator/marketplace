@@ -19,6 +19,7 @@ import {
   Language,
   Size,
 } from "../../components/elements/list";
+import InformationCard from "../../components/modules/cards/informationCard";
 import { useEffect, useState } from "react";
 import { getCatalogById } from "../../services/catalog";
 import { Catalog } from "../../types";
@@ -93,9 +94,10 @@ export default function Installation({ catalogDetails }: Props) {
         developer={catalog?.developer}
       />
       <WhatsNewCard latestUpdates={catalog?.latestUpdates} />
-      {/*<InformationCard />*/}
-      {/* <SimilarCard />
-      <MoreCard />*/}
+      <InformationCard  catalog={catalog}/>
+
+       <SimilarCard />
+    {/*  <MoreCard />*/}
       <Footer />
     </div>
   );

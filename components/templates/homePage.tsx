@@ -26,14 +26,10 @@ export default function HomePage({ catalog }: HomePageProps) {
   return (
     <div>
       {" "}
-      <div className="lg:grid lg:grid-cols-4  flex flex-wrap  ml-4 gap-4 lg:place-items-center justify-center mx-auto">
+      <div className="lg:grid lg:grid-cols-4  flex flex-wrap mt-4 ml-4 lg:place-items-center justify-center mx-auto">
         {catalog &&
           catalog.map((item, index) => {
-            return (
-              <div key={index} onClick={() => redirect(item.id)}>
-                <CatalogCard catalog={item} />
-              </div>
-            );
+            return <CatalogCard key={index} catalog={item} />;
           })}
       </div>
       <div
