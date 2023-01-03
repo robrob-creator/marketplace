@@ -11,7 +11,7 @@ import {
 } from "project-isaac-components";
 
 const input = (
-  <div className="rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400">
+  <div className="sm:inline-flex rounded-md border-2 pr-2 border-[#D9D9D9] relative text-gray-600 focus-within:text-gray-400 ">
     <span className="absolute inset-y-0 left-0 flex items-center pl-2">
       <button
         type="submit"
@@ -32,16 +32,16 @@ const input = (
 const LeftElement = () => {
   const router = useRouter();
   return (
-    <div className="inline-flex gap-1 font-semibold">
+    <div className="sm:inline-flex hidden  gap-1 font-semibold">
       <UserAvatar className="w-8" />
       <Dropdown label="Grills092">
-        <div className="flex flex-col gap-8  w-[400px] p-5 rounded-lg bg-white drop-shadow-2xl">
-          <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600 ">
+        <div className="flex flex-col gap-8  w-[400px] pb-5 pt-2 rounded-lg bg-white drop-shadow-2xl">
+          <div className="border-b border-[#D9D9D9] py-4 ">
+            <p className="text-base font-medium text-gray-600 px-5">
               Personal account
             </p>
           </div>
-          <div className="inline-flex justify-between items-center">
+          <div className="inline-flex justify-between items-center px-5">
             <div className="flex space-x-2.5 w-28 h-full">
               <UserAvatar />
               <p className="text-base font-medium text-gray-600">Grills1031</p>
@@ -52,10 +52,12 @@ const LeftElement = () => {
             </div>
           </div>
           <div className="border-b border-[#D9D9D9] py-4">
-            <p className="text-base font-medium text-gray-600">Organization</p>
+            <p className="text-base font-medium text-gray-600 px-5">
+              Organization
+            </p>
           </div>
           <div
-            className="inline-flex gap-4 items-center cursor-pointer"
+            className="inline-flex gap-4 items-center cursor-pointer px-5"
             onClick={() =>
               router.push("/user-account-setting/create-organization")
             }
@@ -72,7 +74,7 @@ const LeftElement = () => {
 };
 
 const rightElement = (
-  <div className="inline-flex gap-5">
+  <div className="gap-5 sm:inline-flex hidden">
     {input}
     <div className="my-auto cursor-pointer">
       <DottedMenuIcon />
@@ -82,7 +84,6 @@ const rightElement = (
 );
 
 export default function DashboardNav() {
-  const router = useRouter();
   return (
     <NavigationBar
       className="bg-white border-b border-gray-200"

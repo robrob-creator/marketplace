@@ -10,7 +10,6 @@ type Props = {
 };
 export default function Homes({ catalogList }: Props) {
   const [catalog, setCatalog] = useState<Catalog[]>([]);
-
   useEffect(() => {
     setCatalog(catalogList);
   }, [catalogList]);
